@@ -1,0 +1,13 @@
+CRITICAL - 2022-04-10 09:22:00 --> Undefined property: CodeIgniter\View\View::$title
+#0 C:\xampp\htdocs\management-assets\app\Views\layouts\template.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 10)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('layouts/templat...', Array, true)
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('index', Array, true)
+#5 C:\xampp\htdocs\management-assets\app\Controllers\Pages.php(15): view('index', Array)
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pages->index()
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+#8 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
