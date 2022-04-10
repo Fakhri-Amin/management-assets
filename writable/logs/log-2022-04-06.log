@@ -1,0 +1,40 @@
+CRITICAL - 2022-04-06 21:15:59 --> Invalid file: admin/daftar-profil.php
+#0 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/daftar-pr...')
+#1 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin/daftar-pr...', Array, true)
+#2 C:\xampp\htdocs\web-cms\app\Controllers\Profile.php(9): view('admin/daftar-pr...')
+#3 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Profile->index()
+#4 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#5 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\web-cms\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-04-06 21:20:46 --> Invalid file: admin/daftar-profil.php
+#0 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/daftar-pr...')
+#1 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin/daftar-pr...', Array, true)
+#2 C:\xampp\htdocs\web-cms\app\Controllers\Profile.php(22): view('admin/daftar-pr...', Array)
+#3 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Profile->index()
+#4 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#5 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\web-cms\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-04-06 21:20:48 --> Invalid file: admin/daftar-profil.php
+#0 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/daftar-pr...')
+#1 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin/daftar-pr...', Array, true)
+#2 C:\xampp\htdocs\web-cms\app\Controllers\Profile.php(22): view('admin/daftar-pr...', Array)
+#3 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Profile->index()
+#4 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#5 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\web-cms\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-04-06 21:28:22 --> Invalid file: admin/profile/ubah-profile.php
+#0 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/profile/u...')
+#1 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin/profile/u...', Array, true)
+#2 C:\xampp\htdocs\web-cms\app\Controllers\Profile.php(32): view('admin/profile/u...')
+#3 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Profile->ubah()
+#4 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#5 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\web-cms\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\web-cms\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
