@@ -36,6 +36,10 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::index');
 $routes->get('/tanah-dan-bangunan', 'TanahBangunan::index');
 
+$routes->get('/laboratorium', 'Laboratorium::index');
+// $routes->get('/laboratorium/edit', 'Laboratorium::edit');
+
+
 
 /*
  * --------------------------------------------------------------------

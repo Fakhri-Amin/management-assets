@@ -15,7 +15,9 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
+                        <!-- menu  -->
                         <a class="nav-link" href="/tanah-dan-bangunan">Tanah dan bangunan</a>
+                        <a class="nav-link" href="/laboratorium">Laboratorium</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
