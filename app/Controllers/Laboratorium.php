@@ -2,13 +2,23 @@
 
 namespace App\Controllers;
 
+use \App\Models\ModelLaboratorium;
+
 class Laboratorium extends BaseController
 {
+    protected $labModel;
+
+    public function __construct()
+    {
+        $this->labModel = new ModelLaboratorium();
+    }
+
     // menampilkan semua data
     public function index()
     {
         $data = [
-            'title' => 'daftar barang laboratorium'
+            'title' => 'daftar barang laboratorium',
+            'datas' => $this->labModel->getData(),
         ];
         return view('laboratorium/index', $data);
     }

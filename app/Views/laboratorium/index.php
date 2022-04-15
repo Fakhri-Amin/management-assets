@@ -6,17 +6,17 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="#">profil</a></li>
+        <li class="breadcrumb-item"><a href="#">laboratorium</a></li>
         <li class="breadcrumb-item active">list</li>
     </ol>
 
     <div class="card mb-4">
         <div class="card-header text-center">
             <i class="fas fa-table me-1"></i>
-            Data Profil
+            Data Laboratorium
             <a class="btn btn-primary btn-sm float-end" href="/admin/profile/tambah">
                 <i class="fas fa-solid fa-plus"></i>
-                tambah profil
+                tambah data
             </a>
         </div>
         <div class="card-body">
@@ -38,24 +38,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>komputer</td>
-                        <td>akses point</td>
-                        <td>2342$#</td>
-                        <td>loremm</td>
-                        <td>loremm</td>
-                        <td>loremm</td>
-                        <td>loremm</td>
-                        <td>loremm</td>
-                        <td>loremm</td>
-                        <td>loremm</td>
-                        <td>
-                            <a class="btn btn-success btn-sm" href="/laboratorium/edit">ubah</a>
-                            <a class="btn btn-danger btn-sm" href="/laboratorium/delete">hapus</a>
-                        </td>
-                    </tr>
-                    <tr>
+                    <?php $no = 1;
+                    foreach ($datas as $data) : ?>
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td>
+                                <img src="/img/laboratorium/<?= $data['item_photo'] ?>" alt="<?= $data['item_photo'] ?>" title="<?= $data['item_photo'] ?>" width="100">
+                            </td>
+                            <td><?= $data['item_name'] ?></td>
+                            <td><?= $data['item_code'] ?></td>
+                            <td><?= $data['item_spec'] ?></td>
+                            <td><?= $data['obtained_year'] ?></td>
+                            <td><?= $data['unit_value'] ?></td>
+                            <td><?= $data['condition'] ?></td>
+                            <td><?= $data['total'] ?></td>
+                            <td><?= $data['user_unit'] ?></td>
+                            <td><?= $data['ownership_type'] ?></td>
+                            <td>
+                                <a class="btn btn-success badge btn-sm" href="/laboratorium/edit">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <!-- <tr>
                         <td>2</td>
                         <td>komputer k</td>
                         <td>akses point</td>
@@ -68,8 +77,12 @@
                         <td>loremm</td>
                         <td>loremm</td>
                         <td>
-                            <a class="btn btn-success btn-sm" href="/laboratorium/edit">ubah</a>
-                            <a class="btn btn-danger btn-sm" href="/laboratorium/delete">hapus</a>
+                            <a class="btn btn-success badge btn-sm" href="/laboratorium/edit">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
                         </td>
                     </tr>
                     <tr>
@@ -85,10 +98,14 @@
                         <td>loremm</td>
                         <td>loremm</td>
                         <td>
-                            <a class="btn btn-success btn-sm" href="/laboratorium/edit">ubah</a>
-                            <a class="btn btn-danger btn-sm" href="/laboratorium/delete">hapus</a>
+                            <a class="btn btn-success badge btn-sm" href="/laboratorium/edit">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
