@@ -41,13 +41,13 @@ class Laboratorium extends Migration
             ],
             // tahun perolehan
             'obtained_year'       => [
-                'type'       => 'int',
+                'type'       => 'INT',
                 'constraint' => '5',
                 'null' => true
             ],
             // nilai satuan / harga
             'unit_value'       => [
-                'type'       => 'int',
+                'type'       => 'INT',
                 'constraint' => '10',
                 'null' => true
             ],
@@ -59,7 +59,7 @@ class Laboratorium extends Migration
             ],
             // jumlah
             'total'       => [
-                'type'       => 'int',
+                'type'       => 'INT',
                 'constraint' => '10',
                 'null' => true
             ],
