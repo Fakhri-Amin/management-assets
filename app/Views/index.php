@@ -6,10 +6,13 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Dashboard</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active mb-5">Dashboard</li>
+        <li class="breadcrumb-item active">Halaman Utama</li>
     </ol>
-    <!-- <div class="row">
-        <div class="col-xl-3 col-md-6">
+    <h2 class="text-center mb-0"><span class="fw-normal">Selamat Datang,</span> Admin!</h2>
+    <p class="fs-3 fw-light text-center mb-4 mt-0">silahkan pilih menu yang tersedia</p>
+
+    <div class="row justify-content-center">
+        <!-- <div class="col-xl-3 col-md-6">
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body">Primary Card</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
@@ -26,27 +29,32 @@
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col-xl-3 col-md-6">
             <div class="card bg-success text-white mb-4">
-                <div class="card-body">Success Card</div>
+                <div class="card-body">
+                    <span class="fs-5">
+                        <i class="bi bi-box"></i> Persediaan</span>
+                </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
+                    <a class="small text-white stretched-link" href="/persediaan">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-danger text-white mb-4">
-                <div class="card-body">Danger Card</div>
+                <div class="card-body">
+                    <span class="fs-5"><i class="bi bi-display"></i> Laboratorium</span>
+                </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
+                    <a class="small text-white stretched-link" href="/laboratorium">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
-    </div> -->
-    <h2 class="text-center mt-5">Selamat Datang, Admin!</h2>
+
+    </div>
 </div>
 
 <?= $this->endSection('content'); ?>

@@ -10,13 +10,18 @@ class ModelLaboratorium extends Model
     protected $primaryKey = 'id_lab';  // nama field id 
     protected $useTimestamps = true;  // jika menggunakan crated_at dan updated_at
 
-    // protected $allowedFields = [
-    //     'name',
-    //     'sampul',
-    //     'penulis',
-    //     'penerbit',
-    //     'slug'
-    // ];    //  field / column yang boleh diisi oleh kita, sisanya field created_at & updated_at diisi secara otomatis oleh CInya 
+    protected $allowedFields = [
+        'item_photo',
+        'item_code',
+        'item_name',
+        'item_spec',
+        'obtained_year',
+        'unit_value',
+        'condition',
+        'total',
+        'user_unit',
+        'ownership_type'
+    ];    //  field / column yang boleh diisi oleh kita, sisanya field id, created_at & updated_at diisi secara otomatis oleh CInya 
 
     public function getData($slug = false)
     {

@@ -14,12 +14,21 @@
         <div class="card-header text-center">
             <i class="fas fa-table me-1"></i>
             Data Laboratorium
-            <a class="btn btn-primary btn-sm float-end" href="/admin/profile/tambah">
+            <a class="btn btn-primary btn-sm float-end" href="/laboratorium/create">
                 <i class="fas fa-solid fa-plus"></i>
                 tambah data
             </a>
         </div>
+
         <div class="card-body">
+
+            <!-- jika ada flash data -->
+            <?php if (session()->getFlashdata('message')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?= session()->getFlashdata('message'); ?>
+                </div>
+            <?php endif; ?>
+
             <table id="datatablesSimple" class="data-profil">
                 <thead>
                     <tr>
