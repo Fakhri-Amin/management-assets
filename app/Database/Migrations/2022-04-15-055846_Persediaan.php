@@ -74,7 +74,7 @@ class Persediaan extends Migration
                 'null' => true
             ]
         ]);
-        $this->forge->addKey('id', true);   // set primary key
+        $this->forge->addKey('id_persediaan', true);   // set primary key
         $this->forge->createTable('persediaan');    // set table name
     }
 

@@ -6,7 +6,7 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="#">profil</a></li>
+        <li class="breadcrumb-item"><a href="#">persediaan</a></li>
         <li class="breadcrumb-item active">list</li>
     </ol>
 
@@ -14,9 +14,9 @@
         <div class="card-header text-center">
             <i class="fas fa-table me-1"></i>
             Data Persediaan
-            <a class="btn btn-primary btn-sm float-end" href="/admin/profile/tambah">
+            <a class="btn btn-primary btn-sm float-end" href="/persediaan/create">
                 <i class="fas fa-solid fa-plus"></i>
-                tambah profil
+                Tambah Data
             </a>
         </div>
         <div class="card-body">
@@ -38,22 +38,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data as $d) : ?>
+                    <?php $no = 1;
+                    foreach ($datas as $data) : ?>
                         <tr>
-                            <td><?= $d['id']; ?></td>
-                            <td><?= $d['foto_barang']; ?></td>
-                            <td><?= $d['kode_barang']; ?></td>
-                            <td><?= $d['nama_barang']; ?></td>
-                            <td><?= $d['nilai_satuan']; ?></td>
-                            <td><?= $d['spesifikasi']; ?></td>
-                            <td><?= $d['tahun_perolehan']; ?></td>
-                            <td><?= $d['jumlah_barang_masuk']; ?></td>
-                            <td><?= $d['jumlah_barang_keluar']; ?></td>
-                            <td><?= $d['sisa_barang']; ?></td>
-                            <td><?= $d['unit_pengguna_barang']; ?></td>
+                            <td><?= $no++ ?></td>
                             <td>
-                                <a class="btn btn-success btn-sm" href="/persediaan/edit">ubah</a>
-                                <a class="btn btn-danger btn-sm" href="/persediaan/delete">hapus</a>
+                                <img src="/img/laboratorium/<?= $data['foto_barang'] ?>" alt="<?= $data['foto_barang'] ?>" title="<?= $data['foto_barang'] ?>" width="100">
+                            </td>
+                            <td><?= $data['kode_barang']; ?></td>
+                            <td><?= $data['nama_barang']; ?></td>
+                            <td><?= $data['spesifikasi']; ?></td>
+                            <td><?= $data['tahun_perolehan']; ?></td>
+                            <td><?= $data['nilai_satuan']; ?></td>
+                            <td><?= $data['jumlah_barang_masuk']; ?></td>
+                            <td><?= $data['jumlah_barang_keluar']; ?></td>
+                            <td><?= $data['sisa_barang']; ?></td>
+                            <td><?= $data['unit_pengguna_barang']; ?></td>
+                            <td>
+                                <a class="btn btn-success badge btn-sm" href="/laboratorium/edit">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
