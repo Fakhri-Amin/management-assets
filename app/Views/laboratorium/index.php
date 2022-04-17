@@ -16,7 +16,7 @@
             Data Laboratorium
             <a class="btn btn-primary btn-sm float-end" href="/laboratorium/create">
                 <i class="fas fa-solid fa-plus"></i>
-                tambah data
+                Tambah Data
             </a>
         </div>
 

@@ -17,7 +17,7 @@ class Laboratorium extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'daftar barang laboratorium',
+            'title' => 'Daftar barang laboratorium',
             'datas' => $this->labModel->getData(),
         ];
         return view('laboratorium/index', $data);
@@ -27,7 +27,7 @@ class Laboratorium extends BaseController
     public function create()
     {
         $data = [
-            'title' => 'tambah barang laboratorium',
+            'title' => 'Tambah barang laboratorium',
         ];
         return view('laboratorium/create', $data);
     }
@@ -55,7 +55,7 @@ class Laboratorium extends BaseController
             'ownership_type' => $this->request->getVar('ownership_type')
         ]);
 
-        // lakukan flas data saat data ditambah
+        // lakukan flash data saat data ditambah
         session()->setFlashdata('message', 'Berhasil menambahkan data!');
         return redirect()->to('/laboratorium');
     }

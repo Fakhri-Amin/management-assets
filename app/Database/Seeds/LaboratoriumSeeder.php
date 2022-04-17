@@ -5,7 +5,7 @@ namespace App\Database\Seeds;
 use CodeIgniter\Database\Seeder;
 use CodeIgniter\I18n\Time;
 
-class Laboratorium extends Seeder
+class LaboratoriumSeeder extends Seeder
 {
     public function run()
     {
@@ -20,7 +20,7 @@ class Laboratorium extends Seeder
                 'condition' => 'tidak bagus',
                 'total' => 5,
                 'user_unit' => 5,
-                'ownership_type' => 'lab jarkom',
+                'ownership_type' => 'Lab jarkom',
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),
             ],
@@ -34,7 +34,7 @@ class Laboratorium extends Seeder
                 'condition' => 'tidak bagus',
                 'total' => 10,
                 'user_unit' => 10,
-                'ownership_type' => 'lab tik',
+                'ownership_type' => 'Lab tik',
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),
             ],
@@ -48,10 +48,10 @@ class Laboratorium extends Seeder
                 'condition' => 'tidak bagus',
                 'total' => 1,
                 'user_unit' => 1,
-                'ownership_type' => 'lab rpl',
+                'ownership_type' => 'Lab rpl',
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),
-            ],
+            ]
         ];
 
         // Simple Queries

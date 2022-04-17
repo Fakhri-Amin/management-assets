@@ -10,24 +10,54 @@ class PersediaanSeeder extends Seeder
     public function run()
     {
         $data = [
-            'foto_barang' => '123',
-            'kode_barang'    => 'komputer',
-            'nama_barang'    => 'komputer',
-            'spesifikasi'    => 'komputer',
-            'tahun_perolehan'    => 'komputer',
-            'nilai_satuan'    => 'komputer',
-            'jumlah_barang_masuk'    => 3,
-            'jumlah_barang_keluar'    => 5,
-            'sisa_barang'    => 'komputer',
-            'unit_pengguna_barang'    => 'komputer',
-            'created_at'            => Time::now(),
-            'updated_at'            => Time::now()
+            [
+                'foto_barang' => 'monitor1.jpg',
+                'kode_barang'    => '897868',
+                'nama_barang'    => 'Asus ROG',
+                'spesifikasi'    => 'Intel Core i12',
+                'tahun_perolehan'    => 2019,
+                'nilai_satuan'    => 1003452,
+                'jumlah_barang_masuk'    => 3,
+                'jumlah_barang_keluar'    => 5,
+                'sisa_barang'    => 10,
+                'unit_pengguna_barang'    => 'Lab jarkom',
+                'created_at'            => Time::now(),
+                'updated_at'            => Time::now()
+            ],
+            [
+                'foto_barang' => 'monitor2.jpg',
+                'kode_barang'    => '756234',
+                'nama_barang'    => 'Acer Predator',
+                'spesifikasi'    => 'Intel Core i9',
+                'tahun_perolehan'    => 2020,
+                'nilai_satuan'    => 1003789,
+                'jumlah_barang_masuk'    => 8,
+                'jumlah_barang_keluar'    => 2,
+                'sisa_barang'    => 10,
+                'unit_pengguna_barang'    => 'Lab RPL',
+                'created_at'            => Time::now(),
+                'updated_at'            => Time::now()
+            ],
+            [
+                'foto_barang' => 'monitor3.jpg',
+                'kode_barang'    => '897868',
+                'nama_barang'    => 'MSI',
+                'spesifikasi'    => 'Intel Core i99',
+                'tahun_perolehan'    => 2021,
+                'nilai_satuan'    => 1011342,
+                'jumlah_barang_masuk'    => 1,
+                'jumlah_barang_keluar'    => 2,
+                'sisa_barang'    => 0,
+                'unit_pengguna_barang'    => 'Lab Riset',
+                'created_at'            => Time::now(),
+                'updated_at'            => Time::now()
+            ]
         ];
 
         // Simple Queries
         // $this->db->query("INSERT INTO users (username, email) VALUES(:username:, :email:)", $data);
 
         // Using Query Builder
-        $this->db->table('persediaan')->insert($data);
+        $this->db->table('persediaan')->insertBatch($data);
     }
 }
