@@ -32,51 +32,55 @@
             Tambah Data
         </div>
         <div class="card-body">
-            <form method="POST" action="/persediaan/save">
+            <form method="POST" action="/persediaan/save" class="row g-3 needs-validation">
                 <?= csrf_field(); ?>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="foto_barang" name="foto_barang" type="text" autofocus />
-                    <label for="foto_barang">Nama Foto</label>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="foto_barang" class="form-label">Foto Barang</label>
+                        <input type="file" class="form-control" id="foto_barang" name="foto_barang" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kode_barang" class="form-label">Kode Barang</label>
+                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nama_barang" class="form-label">Nama Barang</label>
+                        <input type="text" class="form-control" id="nama_barang" name="nama_barang" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="spesifikasi" class="form-label">Spesifikasi / Jenis / Merek</label>
+                        <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" required>
+                    </div>
                 </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="kode_barang" name="kode_barang" type="text" autofocus />
-                    <label for="kode_barang">Kode Barang</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="nama_barang" name="nama_barang" type="text" autofocus />
-                    <label for="nama_barang">Nama barang</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="spesifikasi" name="spesifikasi" type="text" autofocus />
-                    <label for="spesifikasi">Spesifikasi Barang</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="tahun_perolehan" name="tahun_perolehan" type="text" autofocus />
-                    <label for="tahun_perolehan">Tahun Perolehan</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="nilai_satuan" name="nilai_satuan" type="text" autofocus />
-                    <label for="nilai_satuan">Nilai Satuan</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="jumlah_barang_masuk" name="jumlah_barang_masuk" type="text" autofocus />
-                    <label for="jumlah_barang_masuk">Jumlah Barang Masuk</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="jumlah_barang_keluar" name="jumlah_barang_keluar" type="text" autofocus />
-                    <label for="jumlah_barang_keluar">Jumlah Barang Keluar</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="sisa_barang" name="sisa_barang" type="text" autofocus />
-                    <label for="sisa_barang">Sisa Barang</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="unit_pengguna_barang" name="unit_pengguna_barang" type="text" autofocus />
-                    <label for="unit_pengguna_barang">Unit Pengguna Barang</label>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="tahun_perolehan" class="form-label">Tahun Perolehan</label>
+                        <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nilai_satuan" class="form-label">Nilai Satuan</label>
+                        <input type="text" class="form-control" id="nilai_satuan" name="nilai_satuan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumlah_barang_masuk" class="form-label">Jumlah Barang Masuk</label>
+                        <input type="text" class="form-control" id="jumlah_barang_masuk" name="jumlah_barang_masuk" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumlah_barang_keluar" class="form-label">Jumlah Barang Keluar</label>
+                        <input type="text" class="form-control" id="jumlah_barang_keluar" name="jumlah_barang_keluar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sisa_barang" class="form-label">Sisa Barang</label>
+                        <input type="text" class="form-control" id="sisa_barang" name="sisa_barang" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="unit_pengguna_barang" class="form-label">Unit Pengguna Barang</label>
+                        <input type="text" class="form-control" id="unit_pengguna_barang" name="unit_pengguna_barang" required>
+                    </div>
                 </div>
                 <div class="mt-4 mb-0">
-                    <a class="btn btn-danger float-start" href="#" onclick="window.history.back()">kembali</a>
-                    <button class="btn btn-primary float-end" type="submit" name="tambah">tambah</button>
+                    <a class="btn btn-danger float-start" href="#" onclick="window.history.back()">Kembali</a>
+                    <button class="btn btn-primary float-end" type="submit" name="tambah">Tambah</button>
                 </div>
             </form>
         </div>
