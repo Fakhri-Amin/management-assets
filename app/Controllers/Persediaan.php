@@ -41,7 +41,7 @@ class Persediaan extends BaseController
     public function save()
     {
         // $slug = url_title($this->request->getVar('name'), '-', true);
-        $this->labModel->insert([
+        $this->persediaanModel->save([
             'foto_barang'     => $this->request->getVar('foto_barang'),
             'kode_barang'      => $this->request->getVar('kode_barang'),
             'nama_barang'      => $this->request->getVar('nama_barang'),
