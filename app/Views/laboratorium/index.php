@@ -32,18 +32,18 @@
             <table id="datatablesSimple" class="data-profil">
                 <thead>
                     <tr>
-                        <th>no</th>
-                        <th>foto barang</th>
-                        <th>nama barang</th>
-                        <th>kode barang</th>
-                        <th>spesifikasi</th>
-                        <th>tahun perolehan</th>
-                        <th>nilai satuan</th>
-                        <th>kondisi</th>
-                        <th>jumlah</th>
-                        <th>unit pengguna</th>
-                        <th>jenis kepemilian</th>
-                        <th>aksi</th>
+                        <th>No</th>
+                        <th>Foto Barang</th>
+                        <th>Kode Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Spesifikasi / Jenis / Merek</th>
+                        <th>Tahun Perolehan</th>
+                        <th>Nilai Satuan / Harga</th>
+                        <th>Kondisi</th>
+                        <th>Jumlah</th>
+                        <th>Unit Pengguna</th>
+                        <th>Jenis Kepemilian</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,8 +54,8 @@
                             <td>
                                 <img src="/img/laboratorium/<?= $data['item_photo'] ?>" alt="<?= $data['item_photo'] ?>" title="<?= $data['item_photo'] ?>" width="100">
                             </td>
-                            <td><?= $data['item_name'] ?></td>
                             <td><?= $data['item_code'] ?></td>
+                            <td><?= $data['item_name'] ?></td>
                             <td><?= $data['item_spec'] ?></td>
                             <td><?= $data['obtained_year'] ?></td>
                             <td><?= $data['unit_value'] ?></td>

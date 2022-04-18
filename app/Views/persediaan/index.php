@@ -20,6 +20,13 @@
             </a>
         </div>
         <div class="card-body">
+            <!-- jika ada flash data -->
+            <?php if (session()->getFlashdata('message')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?= session()->getFlashdata('message'); ?>
+                </div>
+            <?php endif; ?>
+
             <table id="datatablesSimple" class="data-profil">
                 <thead>
                     <tr>
@@ -58,12 +65,12 @@
                                 <a class="btn btn-success badge btn-sm" href="/persediaan/edit/<?= $data['id_persediaan']; ?>">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <form action="/persediaan/<?= $data['id_persediaan']; ?>" method="POST">
+                                <form action="/persediaan/<?= $data['id_persediaan']; ?>" method="POST" class="d-inline">
                                     <?= csrf_field(); ?>
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <a class="btn btn-danger badge btn-sm" href="/persediaan/delete/<?= $data['id_persediaan']; ?>" onclick=" return confirm('Apakah anda yakin?');">
+                                    <button type="submit" class="btn btn-sm btn-danger badge" onclick="return confirm('apakah anda yakin ingin dihapus?')">
                                         <i class="bi bi-trash-fill"></i>
-                                    </a>
+                                    </button>
                                 </form>
                             </td>
                         </tr>

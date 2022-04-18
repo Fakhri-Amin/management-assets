@@ -5,7 +5,7 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="/laboratorium">persediaan</a></li>
+        <li class="breadcrumb-item"><a href="/persediaan">persediaan</a></li>
         <li class="breadcrumb-item active">edit data</li>
     </ol>
 
@@ -32,56 +32,70 @@
             Edit Data
         </div>
         <div class="card-body">
-            <form method="POST" action="/persediaan/update/<?= $datas['id_persediaan']; ?>" class="row g-3 needs-validation" enctype="multipart/form-data">
+            <form method="POST" action="/persediaan/update/<?= $dataPersediaan['id_persediaan'] ?>" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="foto_barang" class="form-label">Foto Barang</label>
-                        <input type="file" class="form-control" id="foto_barang" name="foto_barang" value="<?= $datas['foto_barang']; ?>" value="<?= (old('foto_barang')) ? old('foto_barang') : $datas['foto_barang']; ?>">
+
+                <input type="hidden" name="old_photo" value="<?= $dataPersediaan['foto_barang'] ?>">
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row mb-3">
+                            <label for="foto_barang" class="col-sm-2 col-form-label">Foto Barang</label>
+                            <div class="col-sm-3">
+                                <img src="/img/persediaan/<?= $dataPersediaan['foto_barang'] ?>" alt="" class="img-thumbnail img-preview">
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="input-group mb-3">
+                                    <input type="file" class="form-control <?= ($validation->hasError('foto_barang')) ? 'is-invalid' : '' ?>" name="foto_barang" id="foto_barang" onchange="previewImage()">
+                                    <div id="validationServer03Feedback" class="invalid-feedback">
+                                        <?= $validation->getError('foto_barang'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="kode_barang" class="form-label">Kode Barang</label>
+                            <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="<?= (old('kode_barang')) ? old('kode_barang') : $dataPersediaan['kode_barang']; ?>" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nama_barang" class="form-label">Nama Barang</label>
+                            <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="<?= (old('nama_barang')) ? old('nama_barang') : $dataPersediaan['nama_barang']; ?>" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="spesifikasi" class="form-label">Spesifikasi / Jenis / Merek</label>
+                            <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" value="<?= (old('spesifikasi')) ? old('spesifikasi') : $dataPersediaan['spesifikasi']; ?>" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tahun_perolehan" class="form-label">Tahun Perolehan</label>
+                            <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : $dataPersediaan['tahun_perolehan']; ?>" required autofocus>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="kode_barang" class="form-label">Kode Barang</label>
-                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="<?= $datas['kode_barang']; ?>" required value="<?= (old('kode_barang')) ? old('kode_barang') : $datas['kode_barang']; ?>">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="nilai_satuan" class="form-label">Nilai Satuan / Harga</label>
+                            <input type="text" class="form-control" id="nilai_satuan" name="nilai_satuan" value="<?= (old('nilai_satuan')) ? old('nilai_satuan') : $dataPersediaan['nilai_satuan']; ?>" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jumlah_barang_masuk" class="form-label">Jumlah Barang Masuk</label>
+                            <input type="text" class="form-control" id="jumlah_barang_masuk" name="jumlah_barang_masuk" value="<?= (old('jumlah_barang_masuk')) ? old('jumlah_barang_masuk') : $dataPersediaan['jumlah_barang_masuk']; ?>" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jumlah_barang_keluar" class="form-label">Jumlah Barang Keluar</label>
+                            <input type="text" class="form-control" id="jumlah_barang_keluar" name="jumlah_barang_keluar" value="<?= (old('jumlah_barang_keluar')) ? old('jumlah_barang_keluar') : $dataPersediaan['jumlah_barang_keluar']; ?>" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sisa_barang" class="form-label">Sisa Barang</label>
+                            <input type="text" class="form-control" id="sisa_barang" name="sisa_barang" value="<?= (old('sisa_barang')) ? old('sisa_barang') : $dataPersediaan['sisa_barang']; ?>" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="unit_pengguna_barang" class="form-label">Unit Pengguna Barang</label>
+                            <input type="text" class="form-control" id="unit_pengguna_barang" name="unit_pengguna_barang" value="<?= (old('unit_pengguna_barang')) ? old('unit_pengguna_barang') : $dataPersediaan['unit_pengguna_barang']; ?>" required autofocus>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="nama_barang" class="form-label">Nama Barang</label>
-                        <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="<?= $datas['nama_barang']; ?>" required value="<?= (old('nama_barang')) ? old('nama_barang') : $datas['nama_barang']; ?>">
+                    <div class="mt-4 mb-0">
+                        <a class="btn btn-danger float-start" href="#" onclick="window.history.back()">Kembali</a>
+                        <button class="btn btn-primary float-end" type="submit" name="tambah">Edit</button>
                     </div>
-                    <div class="mb-3">
-                        <label for="spesifikasi" class="form-label">Spesifikasi / Jenis / Merek</label>
-                        <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" value="<?= $datas['spesifikasi']; ?>" required value="<?= (old('spesifikasi')) ? old('spesifikasi') : $datas['spesifikasi']; ?>">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="tahun_perolehan" class="form-label">Tahun Perolehan</label>
-                        <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" value="<?= $datas['tahun_perolehan']; ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nilai_satuan" class="form-label">Nilai Satuan / Harga</label>
-                        <input type="text" class="form-control" id="nilai_satuan" name="nilai_satuan" value="<?= $datas['nilai_satuan']; ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="jumlah_barang_masuk" class="form-label">Jumlah Barang Masuk</label>
-                        <input type="text" class="form-control" id="jumlah_barang_masuk" name="jumlah_barang_masuk" value="<?= $datas['jumlah_barang_masuk']; ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="jumlah_barang_keluar" class="form-label">Jumlah Barang Keluar</label>
-                        <input type="text" class="form-control" id="jumlah_barang_keluar" name="jumlah_barang_keluar" value="<?= $datas['jumlah_barang_keluar']; ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="sisa_barang" class="form-label">Sisa Barang</label>
-                        <input type="text" class="form-control" id="sisa_barang" name="sisa_barang" value="<?= $datas['sisa_barang']; ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="unit_pengguna_barang" class="form-label">Unit Pengguna Barang</label>
-                        <input type="text" class="form-control" id="unit_pengguna_barang" name="unit_pengguna_barang" value="<?= $datas['unit_pengguna_barang']; ?>" required>
-                    </div>
-                </div>
-                <div class="mt-4 mb-0">
-                    <a class="btn btn-danger float-start" href="#" onclick="window.history.back()">Kembali</a>
-                    <button class="btn btn-primary float-end" type="submit" name="tambah">Edit</button>
-                </div>
             </form>
         </div>
     </div>
