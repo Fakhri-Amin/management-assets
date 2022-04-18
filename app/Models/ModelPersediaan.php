@@ -22,11 +22,11 @@ class ModelPersediaan extends Model
         'unit_pengguna_barang'
     ];
 
-    public function getData($slug = false)
+    public function getData($id_persediaan = false)
     {
-        if ($slug == false) {
+        if ($id_persediaan == false) {
             return $this->findAll();
         }
-        return $this->where(['slug' => $slug])->first();
+        return $this->where(['id_persediaan' => $id_persediaan])->first();
     }
 }

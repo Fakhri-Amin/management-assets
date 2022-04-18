@@ -37,6 +37,10 @@ $routes->get('/', 'Pages::index');
 $routes->get('/tanah-dan-bangunan', 'TanahBangunan::index');
 
 $routes->get('/laboratorium', 'Laboratorium::index');
+
+// $routes->get('/persediaan/edit/(:segment)', 'Persediaan::edit/$1');
+// $routes->delete('/persediaan/(:num)', 'Persediaan::delete/$1');
+// $routes->get('/persediaan/delete/(:any)', 'Persediaan::index/$1');
 // $routes->get('/laboratorium/edit', 'Laboratorium::edit');
 
 

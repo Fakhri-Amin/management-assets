@@ -32,50 +32,53 @@
             Tambah Data
         </div>
         <div class="card-body">
-            <form method="POST" action="/persediaan/save" class="row g-3 needs-validation">
+            <form method="POST" action="/persediaan/save" class="row g-3 needs-validation" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <div class="col">
                     <div class="mb-3">
                         <label for="foto_barang" class="form-label">Foto Barang</label>
-                        <input type="file" class="form-control" id="foto_barang" name="foto_barang" required>
+                        <input type="file" class="form-control <?= ($validation->hasError('foto_barang')) ? 'is-invalid' : ''; ?>" id="foto_barang" name="foto_barang" value="<?= (old('foto_barang')) ? old('foto_barang') : ''; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('foto_barang'); ?>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="kode_barang" class="form-label">Kode Barang</label>
-                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" required>
+                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" required value="<?= (old('kode_barang')) ? old('kode_barang') : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="nama_barang" class="form-label">Nama Barang</label>
-                        <input type="text" class="form-control" id="nama_barang" name="nama_barang" required>
+                        <input type="text" class="form-control" id="nama_barang" name="nama_barang" required value="<?= (old('nama_barang')) ? old('nama_barang') : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="spesifikasi" class="form-label">Spesifikasi / Jenis / Merek</label>
-                        <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" required>
+                        <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" required value="<?= (old('spesifikasi')) ? old('spesifikasi') : ''; ?>">
                     </div>
                 </div>
                 <div class="col">
                     <div class="mb-3">
                         <label for="tahun_perolehan" class="form-label">Tahun Perolehan</label>
-                        <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" required>
+                        <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" required value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : ''; ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="nilai_satuan" class="form-label">Nilai Satuan</label>
-                        <input type="text" class="form-control" id="nilai_satuan" name="nilai_satuan" required>
+                        <label for="nilai_satuan" class="form-label">Nilai Satuan / Harga</label>
+                        <input type="text" class="form-control" id="nilai_satuan" name="nilai_satuan" required value="<?= (old('nilai_satuan')) ? old('nilai_satuan') : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="jumlah_barang_masuk" class="form-label">Jumlah Barang Masuk</label>
-                        <input type="text" class="form-control" id="jumlah_barang_masuk" name="jumlah_barang_masuk" required>
+                        <input type="text" class="form-control" id="jumlah_barang_masuk" name="jumlah_barang_masuk" required value="<?= (old('jumlah_barang_masuk')) ? old('jumlah_barang_masuk') : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="jumlah_barang_keluar" class="form-label">Jumlah Barang Keluar</label>
-                        <input type="text" class="form-control" id="jumlah_barang_keluar" name="jumlah_barang_keluar" required>
+                        <input type="text" class="form-control" id="jumlah_barang_keluar" name="jumlah_barang_keluar" required value="<?= (old('jumlah_barang_keluar')) ? old('jumlah_barang_keluar') : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="sisa_barang" class="form-label">Sisa Barang</label>
-                        <input type="text" class="form-control" id="sisa_barang" name="sisa_barang" required>
+                        <input type="text" class="form-control" id="sisa_barang" name="sisa_barang" required value="<?= (old('sisa_barang')) ? old('sisa_barang') : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="unit_pengguna_barang" class="form-label">Unit Pengguna Barang</label>
-                        <input type="text" class="form-control" id="unit_pengguna_barang" name="unit_pengguna_barang" required>
+                        <input type="text" class="form-control" id="unit_pengguna_barang" name="unit_pengguna_barang" required value="<?= (old('unit_pengguna_barang')) ? old('unit_pengguna_barang') : ''; ?>">
                     </div>
                 </div>
                 <div class="mt-4 mb-0">
