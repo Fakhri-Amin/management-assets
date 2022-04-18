@@ -32,47 +32,67 @@
             Tambah Data
         </div>
         <div class="card-body">
-            <form method="post" action="/laboratorium/save">
+            <form method="post" action="/laboratorium/save" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="item_photo" name="item_photo" type="text" autofocus />
-                    <label for="item_photo">nama foto</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="item_name" name="item_name" type="text" autofocus />
-                    <label for="item_name">nama barang</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="item_code" name="item_code" type="text" autofocus />
-                    <label for="item_code">kode barang</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="item_spec" name="item_spec" type="text" autofocus />
-                    <label for="item_spec">spesifikasi barang</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="obtained_year" name="obtained_year" type="text" autofocus />
-                    <label for="obtained_year">tahun perolehan</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="unit_value" name="unit_value" type="text" autofocus />
-                    <label for="item_value">nilai satuan</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="condition" name="condition" type="text" autofocus />
-                    <label for="condition">kondisi</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="total" name="total" type="text" autofocus />
-                    <label for="total">total</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="user_unit" name="user_unit" type="text" autofocus />
-                    <label for="user_unit">unit pengguna</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="ownership_type" name="ownership_type" type="text" autofocus />
-                    <label for="ownership_type">jenis kepemilikan</label>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row mb-3">
+                            <!-- <label for="item_photo" class="form-label">nama foto</label>
+                            <input class="form-control" id="item_photo" name="item_photo" type="text" autofocus /> -->
+
+                            <label for="item_photo" class="col-sm-2 col-form-label">foto barang</label>
+                            <div class="col-sm-3">
+                                <img src="/img/laboratorium/default.png" alt="" class="img-thumbnail img-preview">
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="input-group mb-3">
+                                    <input type="file" class="form-control <?= ($validation->hasError('item_photo')) ? 'is-invalid' : '' ?>" name="item_photo" id="item_photo" onchange="previewImage()">
+                                    <div id="validationServer03Feedback" class="invalid-feedback">
+                                        <?= $validation->getError('item_photo'); ?>
+                                    </div>
+                                    <label class="input-group-text" class="item_photo" for="item_photo">pilih gambar</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_name" class="form-label">nama barang</label>
+                            <input class="form-control" id="item_name" name="item_name" type="text" value="<?= old('item_name') ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_code" class="form-label">kode barang</label>
+                            <input class="form-control" id="item_code" name="item_code" type="text" value="<?= old('item_code') ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_spec" class="form-label">spesifikasi barang</label>
+                            <input class="form-control" id="item_spec" name="item_spec" type="text" value="<?= old('item_spec') ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="obtained_year" class="form-label">tahun perolehan</label>
+                            <input class="form-control" id="obtained_year" name="obtained_year" type="text" value="<?= old('obtained_year') ?>" required autofocus />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="unit_value" class="form-label">nilai satuan</label>
+                            <input class="form-control" id="unit_value" name="unit_value" type="text" value="<?= old('unit_value') ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="condition" class="form-label">kondisi</label>
+                            <input class="form-control" id="condition" name="condition" type="text" value="<?= old('condition') ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="total" class="form-label">total</label>
+                            <input class="form-control" id="total" name="total" type="text" value="<?= old('total') ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="user_unit" class="form-label">unit pengguna</label>
+                            <input class="form-control" id="user_unit" name="user_unit" type="text" value="<?= old('user_unit') ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="ownership_type" class="form-label">jenis kepemilikan</label>
+                            <input class="form-control" id="ownership_type" name="ownership_type" type="text" value="<?= old('ownership_type') ?>" required autofocus />
+                        </div>
+                    </div>
                 </div>
                 <div class="mt-4 mb-0">
                     <a class="btn btn-danger float-start" href="#" onclick="window.history.back()">kembali</a>

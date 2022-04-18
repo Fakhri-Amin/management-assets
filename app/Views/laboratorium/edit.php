@@ -1,0 +1,107 @@
+<?= $this->extend('layouts/template'); ?>
+
+<?= $this->section('content'); ?>
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Static Navigation</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/laboratorium">laboratorium</a></li>
+        <li class="breadcrumb-item active">edit data</li>
+    </ol>
+
+
+    <!-- <div class="card mb-4">
+        <div class="card-body">
+            <p class="mb-0">
+                This page is an example of using static navigation. By removing the
+                <code>.sb-nav-fixed</code>
+                class from the
+                <code>body</code>
+                , the top navigation and side navigation will become static on scroll. Scroll down this page to see an example.
+            </p>
+        </div>
+    </div>
+    <div style="height: 100vh"></div>
+    <div class="card mb-4">
+        <div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div>
+    </div> -->
+
+    <div class="card mb-4">
+        <div class="card-header text-center">
+            <i class="fas fa-table me-1"></i>
+            Edit Data
+        </div>
+        <div class="card-body">
+            <form method="post" action="/laboratorium/update/<?= $dataLab['id_lab'] ?>" enctype="multipart/form-data">
+                <?= csrf_field(); ?>
+
+                <input type="hidden" name="old_photo" value="<?= $dataLab['item_photo'] ?>">
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row mb-3">
+
+                            <label for="item_photo" class="col-sm-2 col-form-label">foto barang</label>
+                            <div class="col-sm-3">
+                                <img src="/img/laboratorium/<?= $dataLab['item_photo'] ?>" alt="" class="img-thumbnail img-preview">
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="input-group mb-3">
+                                    <input type="file" class="form-control <?= ($validation->hasError('item_photo')) ? 'is-invalid' : '' ?>" name="item_photo" id="item_photo" onchange="previewImage()">
+                                    <div id="validationServer03Feedback" class="invalid-feedback">
+                                        <?= $validation->getError('item_photo'); ?>
+                                    </div>
+                                    <label class="input-group-text" class="item_photo" for="item_photo">pilih gambar</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_name" class="form-label">nama barang</label>
+                            <input class="form-control" id="item_name" name="item_name" type="text" value="<?= (old('item_name')) ? old('item_name') : $dataLab['item_name'] ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_code" class="form-label">kode barang</label>
+                            <input class="form-control" id="item_code" name="item_code" type="text" value="<?= (old('item_code')) ? old('item_code') : $dataLab['item_code'] ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_spec" class="form-label">spesifikasi barang</label>
+                            <input class="form-control" id="item_spec" name="item_spec" type="text" value="<?= (old('item_spec')) ? old('item_spec') : $dataLab['item_spec'] ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="obtained_year" class="form-label">tahun perolehan</label>
+                            <input class="form-control" id="obtained_year" name="obtained_year" type="text" value="<?= (old('obtained_year')) ? old('obtained_year') : $dataLab['obtained_year'] ?>" required autofocus />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="mb-3">
+                            <label for="unit_value" class="form-label">nilai satuan</label>
+                            <input class="form-control" id="unit_value" name="unit_value" type="text" value="<?= (old('unit_value')) ? old('unit_value') : $dataLab['unit_value'] ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="condition" class="form-label">kondisi</label>
+                            <input class="form-control" id="condition" name="condition" type="text" value="<?= (old('condition')) ? old('condition') : $dataLab['condition'] ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="total" class="form-label">total</label>
+                            <input class="form-control" id="total" name="total" type="text" value="<?= (old('total')) ? old('total') : $dataLab['total'] ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="user_unit" class="form-label">unit pengguna</label>
+                            <input class="form-control" id="user_unit" name="user_unit" type="text" value="<?= (old('user_unit')) ? old('user_unit') : $dataLab['user_unit'] ?>" required autofocus />
+                        </div>
+                        <div class="mb-3">
+                            <label for="ownership_type" class="form-label">jenis kepemilikan</label>
+                            <input class="form-control" id="ownership_type" name="ownership_type" type="text" value="<?= (old('ownership_type')) ? old('ownership_type') : $dataLab['ownership_type'] ?>" required autofocus />
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 mb-0">
+                    <a class="btn btn-danger float-start" href="#" onclick="window.history.back()">kembali</a>
+                    <button class="btn btn-primary float-end" type="submit" name="tambah">edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?= $this->endSection('content'); ?>

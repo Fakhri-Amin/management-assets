@@ -37,7 +37,9 @@ $routes->get('/', 'Pages::index');
 $routes->get('/tanah-dan-bangunan', 'TanahBangunan::index');
 
 $routes->get('/laboratorium', 'Laboratorium::index');
-// $routes->get('/laboratorium/edit', 'Laboratorium::edit');
+$routes->get('/laboratorium/edit/(:num)', 'Laboratorium::edit/$1');
+$routes->delete('/laboratorium/(:num)', 'Laboratorium::delete/$1');
+// $routes->get('/laboratorium/save', 'Laboratorium::save');
 
 
 
