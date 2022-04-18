@@ -7,7 +7,7 @@
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="#">laboratorium</a></li>
-        <li class="breadcrumb-item active">list</li>
+        <li class="breadcrumb-item active">daftar</li>
     </ol>
 
     <div class="card mb-4">
@@ -64,12 +64,21 @@
                             <td><?= $data['user_unit'] ?></td>
                             <td><?= $data['ownership_type'] ?></td>
                             <td>
-                                <a class="btn btn-success badge btn-sm" href="/laboratorium/edit">
+                                <a class="btn btn-success badge btn-sm" href="/laboratorium/edit/<?= $data['id_lab'] ?>">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
+                                <!-- <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
                                     <i class="bi bi-trash-fill"></i>
-                                </a>
+                                </a> -->
+
+                                <form action="/laboratorium/<?= $data['id_lab'] ?>" method="post" class="d-inline">
+                                    <?= csrf_field() ?>
+                                    <input type="hidden" value="DELETE" name="_method">
+                                    <button type="submit" class="btn btn-sm btn-danger badge" onclick="return confirm('apakah anda yakin ingin dihapus?')">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </form>
+
                             </td>
                         </tr>
                     <?php endforeach; ?>

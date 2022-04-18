@@ -23,11 +23,11 @@ class ModelLaboratorium extends Model
         'ownership_type'
     ];    //  field / column yang boleh diisi oleh kita, sisanya field id, created_at & updated_at diisi secara otomatis oleh CInya 
 
-    public function getData($slug = false)
+    public function getData($id = false)
     {
-        if ($slug == false) {
+        if ($id == false) {
             return $this->findAll();
         }
-        return $this->where(['slug' => $slug])->first();
+        return $this->where(['id_lab' => $id])->first();
     }
 }
