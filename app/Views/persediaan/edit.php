@@ -32,17 +32,17 @@
             Edit Data
         </div>
         <div class="card-body">
-            <form method="POST" action="/persediaan/update/<?= $dataPersediaan['id_persediaan'] ?>" enctype="multipart/form-data">
+            <form method="POST" action="/persediaan/update/<?= $data['id'] ?>" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
 
-                <input type="hidden" name="old_photo" value="<?= $dataPersediaan['foto_barang'] ?>">
+                <input type="hidden" name="foto_lama" value="<?= $data['foto_barang'] ?>">
 
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="row mb-3">
                             <label for="foto_barang" class="col-sm-2 col-form-label">Foto Barang</label>
                             <div class="col-sm-3">
-                                <img src="/img/persediaan/<?= $dataPersediaan['foto_barang'] ?>" alt="" class="img-thumbnail img-preview">
+                                <img src="/img/persediaan/<?= $data['foto_barang'] ?>" alt="" class="img-thumbnail img-preview">
                             </div>
                             <div class="col-sm-7">
                                 <div class="input-group mb-3">
@@ -55,41 +55,41 @@
                         </div>
                         <div class="mb-3">
                             <label for="kode_barang" class="form-label">Kode Barang</label>
-                            <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="<?= (old('kode_barang')) ? old('kode_barang') : $dataPersediaan['kode_barang']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="<?= (old('kode_barang')) ? old('kode_barang') : $data['kode_barang']; ?>" required autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="nama_barang" class="form-label">Nama Barang</label>
-                            <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="<?= (old('nama_barang')) ? old('nama_barang') : $dataPersediaan['nama_barang']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="<?= (old('nama_barang')) ? old('nama_barang') : $data['nama_barang']; ?>" required autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="spesifikasi" class="form-label">Spesifikasi / Jenis / Merek</label>
-                            <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" value="<?= (old('spesifikasi')) ? old('spesifikasi') : $dataPersediaan['spesifikasi']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="spesifikasi" name="spesifikasi" value="<?= (old('spesifikasi')) ? old('spesifikasi') : $data['spesifikasi']; ?>" required autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="tahun_perolehan" class="form-label">Tahun Perolehan</label>
-                            <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : $dataPersediaan['tahun_perolehan']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : $data['tahun_perolehan']; ?>" required autofocus>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="mb-3">
                             <label for="nilai_satuan" class="form-label">Nilai Satuan / Harga</label>
-                            <input type="text" class="form-control" id="nilai_satuan" name="nilai_satuan" value="<?= (old('nilai_satuan')) ? old('nilai_satuan') : $dataPersediaan['nilai_satuan']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="nilai_satuan" name="nilai_satuan" value="<?= (old('nilai_satuan')) ? old('nilai_satuan') : $data['nilai_satuan']; ?>" required autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="jumlah_barang_masuk" class="form-label">Jumlah Barang Masuk</label>
-                            <input type="text" class="form-control" id="jumlah_barang_masuk" name="jumlah_barang_masuk" value="<?= (old('jumlah_barang_masuk')) ? old('jumlah_barang_masuk') : $dataPersediaan['jumlah_barang_masuk']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="jumlah_barang_masuk" name="jumlah_barang_masuk" value="<?= (old('jumlah_barang_masuk')) ? old('jumlah_barang_masuk') : $data['jumlah_barang_masuk']; ?>" required autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="jumlah_barang_keluar" class="form-label">Jumlah Barang Keluar</label>
-                            <input type="text" class="form-control" id="jumlah_barang_keluar" name="jumlah_barang_keluar" value="<?= (old('jumlah_barang_keluar')) ? old('jumlah_barang_keluar') : $dataPersediaan['jumlah_barang_keluar']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="jumlah_barang_keluar" name="jumlah_barang_keluar" value="<?= (old('jumlah_barang_keluar')) ? old('jumlah_barang_keluar') : $data['jumlah_barang_keluar']; ?>" required autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="sisa_barang" class="form-label">Sisa Barang</label>
-                            <input type="text" class="form-control" id="sisa_barang" name="sisa_barang" value="<?= (old('sisa_barang')) ? old('sisa_barang') : $dataPersediaan['sisa_barang']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="sisa_barang" name="sisa_barang" value="<?= (old('sisa_barang')) ? old('sisa_barang') : $data['sisa_barang']; ?>" required autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="unit_pengguna_barang" class="form-label">Unit Pengguna Barang</label>
-                            <input type="text" class="form-control" id="unit_pengguna_barang" name="unit_pengguna_barang" value="<?= (old('unit_pengguna_barang')) ? old('unit_pengguna_barang') : $dataPersediaan['unit_pengguna_barang']; ?>" required autofocus>
+                            <input type="text" class="form-control" id="unit_pengguna_barang" name="unit_pengguna_barang" value="<?= (old('unit_pengguna_barang')) ? old('unit_pengguna_barang') : $data['unit_pengguna_barang']; ?>" required autofocus>
                         </div>
                     </div>
                     <div class="mt-4 mb-0">

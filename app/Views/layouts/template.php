@@ -51,7 +51,6 @@
 
     <script>
         const previewImage = () => {
-            const sampul = document.querySelector('#item_photo');
             const sampul = document.querySelector('#foto_barang');
             // const sampulLabel = document.querySelector('.sampul-name')
             const imgPreview = document.querySelector('.img-preview')

@@ -62,13 +62,13 @@
                             <td><?= $data['sisa_barang']; ?></td>
                             <td><?= $data['unit_pengguna_barang']; ?></td>
                             <td>
-                                <a class="btn btn-success badge btn-sm" href="/persediaan/edit/<?= $data['id_persediaan']; ?>">
+                                <a class="btn btn-success btn-sm" href="/persediaan/edit/<?= $data['id']; ?>">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <form action="/persediaan/<?= $data['id_persediaan']; ?>" method="POST" class="d-inline">
+                                <form action="/persediaan/<?= $data['id']; ?>" method="POST" class="d-inline">
                                     <?= csrf_field(); ?>
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn btn-sm btn-danger badge" onclick="return confirm('apakah anda yakin ingin dihapus?')">
+                                    <button type="submit" class="mt-1 btn btn-sm btn-danger" onclick="return confirm('apakah anda yakin ingin dihapus?')">
                                         <i class="bi bi-trash-fill"></i>
                                     </button>
                                 </form>

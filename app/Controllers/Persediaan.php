@@ -38,7 +38,7 @@ class Persediaan extends BaseController
         $data = [
             'title' => 'Form Edit Data Persediaan',
             'validation' => \Config\Services::validation(),
-            'dataPersediaan' => $this->persediaanModel->getData($id)
+            'data' => $this->persediaanModel->getData($id)
         ];
         return view('persediaan/edit', $data);
     }
@@ -56,7 +56,7 @@ class Persediaan extends BaseController
                 ]
             ]
         ])) {
-            // return redirect()->to('/persediaan/edit/' . $this->request->getVar('id_persediaan'))->withInput();
+            // return redirect()->to('/persediaan/edit/' . $this->request->getVar('id'))->withInput();
             return redirect()->to('/persediaan/edit/')->withInput();
         }
 
@@ -66,7 +66,7 @@ class Persediaan extends BaseController
         // cek gambar, apakah tetap gambar lama
         if ($filePhoto->getError() == 4) {
             // dd('tidak ganti sampul');
-            $fileName = $this->request->getVar('old_photo');
+            $fileName = $this->request->getVar('foto_lama');
         } else {
             // dd('ganti sampul baru');
             // pindahkan ke folder yang diinginkan :
@@ -77,7 +77,7 @@ class Persediaan extends BaseController
             // cek jika file gambarnya default.png
             if ($data['foto_barang'] != 'default.png') {
                 // hapus file gambar lama
-                unlink('img/persediaan/' . $this->request->getVar('old_photo'));
+                unlink('img/persediaan/' . $this->request->getVar('foto_lama'));
             }
             // Ambil nama file
             $fileName = $filePhoto->getName();
@@ -85,7 +85,7 @@ class Persediaan extends BaseController
 
         // $slug = url_title($this->request->getVar('name'), '-', true);
         $this->persediaanModel->save([
-            'id_persediaan' => $id,
+            'id' => $id,
             'foto_barang'     => $fileName,
             'kode_barang'      => $this->request->getVar('kode_barang'),
             'nama_barang'      => $this->request->getVar('nama_barang'),

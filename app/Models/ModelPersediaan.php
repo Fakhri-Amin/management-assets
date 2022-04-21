@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ModelPersediaan extends Model
 {
     protected $table = 'persediaan';  // Nama table di database
-    protected $primaryKey = 'id_persediaan'; // Nama field id
+    protected $primaryKey = 'id'; // Nama field id
     protected $useTimesStamps = true; // Jika menggunakan created_at dan updated_at
     protected $allowedFields = [
         'foto_barang',
@@ -27,6 +27,6 @@ class ModelPersediaan extends Model
         if ($id == false) {
             return $this->findAll();
         }
-        return $this->where(['id_persediaan' => $id])->first();
+        return $this->where(['id' => $id])->first();
     }
 }

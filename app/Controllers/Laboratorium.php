@@ -44,7 +44,7 @@ class Laboratorium extends BaseController
         $data = [
             'title' => 'Edit barang laboratorium',
             'validation' => \Config\Services::validation(),  // ambil validasi
-            'dataLab' => $this->labModel->getData($id)
+            'data' => $this->labModel->getData($id)
         ];
         return view('laboratorium/edit', $data);
     }
@@ -56,7 +56,7 @@ class Laboratorium extends BaseController
         // validasi input
         if (!$this->validate([
             'item_photo' => [
-                'rules' => 'max_size[item_photo,1024]|is_image[item_photo]|mime_in[item_photo,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[item_photo,2048]|is_image[item_photo]|mime_in[item_photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'is_image' => 'Yang anda pilih bukan gambar',
