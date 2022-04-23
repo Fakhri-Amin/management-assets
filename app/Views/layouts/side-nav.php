@@ -16,6 +16,7 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <!-- menu  -->
+                        <a class="nav-link" href="/peralatan_dan_mesin">Peralatan dan Mesin</a>
                         <a class="nav-link" href="/laboratorium">Laboratorium</a>
                         <a class="nav-link" href="/persediaan">Persediaan</a>
                     </nav>

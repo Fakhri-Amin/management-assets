@@ -6,15 +6,15 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="#">persediaan</a></li>
+        <li class="breadcrumb-item"><a href="#">peralatan dan Mesin</a></li>
         <li class="breadcrumb-item active">list</li>
     </ol>
 
     <div class="card mb-4">
         <div class="card-header text-center">
             <i class="fas fa-table me-1"></i>
-            Data Persediaan
-            <a class="btn btn-primary btn-sm float-end" href="/persediaan/create">
+            Data Peralatan dan Mesin
+            <a class="btn btn-primary btn-sm float-end" href="/peralatan_dan_mesin/create">
                 <i class="fas fa-solid fa-plus"></i>
                 Tambah Data
             </a>
@@ -37,10 +37,11 @@
                         <th>Spesifikasi / Jenis / Merek</th>
                         <th>Tahun Perolehan</th>
                         <th>Nilai Satuan / Harga</th>
-                        <th>Jumlah Barang Masuk</th>
-                        <th>Jumlah Barang Keluar</th>
-                        <th>Sisa Barang</th>
-                        <th>Unit Pengguna Barang</th>
+                        <th>Kondisi</th>
+                        <th>Jumlah</th>
+                        <th>Pengguna</th>
+                        <th>Jenis Kepemilikan</th>
+                        <th>Kolom Keterangan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -50,22 +51,23 @@
                         <tr>
                             <td><?= $no++ ?></td>
                             <td>
-                                <img src="/img/persediaan/<?= $data['foto_barang'] ?>" alt="<?= $data['foto_barang'] ?>" title="<?= $data['foto_barang'] ?>" width="100">
+                                <img src="/img/peralatan_dan_mesin/<?= $data['foto_barang'] ?>" alt="<?= $data['foto_barang'] ?>" title="<?= $data['foto_barang'] ?>" width="100">
                             </td>
                             <td><?= $data['kode_barang']; ?></td>
                             <td><?= $data['nama_barang']; ?></td>
                             <td><?= $data['spesifikasi']; ?></td>
                             <td><?= $data['tahun_perolehan']; ?></td>
                             <td><?= $data['nilai_satuan']; ?></td>
-                            <td><?= $data['jumlah_barang_masuk']; ?></td>
-                            <td><?= $data['jumlah_barang_keluar']; ?></td>
-                            <td><?= $data['sisa_barang']; ?></td>
-                            <td><?= $data['unit_pengguna_barang']; ?></td>
+                            <td><?= $data['kondisi']; ?></td>
+                            <td><?= $data['jumlah']; ?></td>
+                            <td><?= $data['pengguna']; ?></td>
+                            <td><?= $data['jenis_kepemilikan']; ?></td>
+                            <td><?= $data['kolom_keterangan']; ?></td>
                             <td>
-                                <a class="btn btn-success btn-sm" href="/persediaan/edit/<?= $data['id']; ?>">
+                                <a class="btn btn-success btn-sm" href="/peralatan_dan_mesin/edit/<?= $data['id']; ?>">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <form action="/persediaan/<?= $data['id']; ?>" method="POST" class="d-inline">
+                                <form action="/peralatan_dan_mesin/<?= $data['id']; ?>" method="POST" class="d-inline">
                                     <?= csrf_field(); ?>
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">

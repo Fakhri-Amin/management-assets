@@ -4,92 +4,92 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Laboratorium extends Migration
+class PeralatanDanMesin extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_lab'          => [
+            'id'      => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            // foto barang
-            'item_photo'       => [
+            'foto_barang'       => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'null' => true
             ],
-            // kode barang
-            'item_code'       => [
+            'kode_barang'       => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'null' => true
             ],
-            // nama barang
-            'item_name'       => [
-                'type'       => 'VARCHAR',
+            'nama_barang' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+                'null' => true,
+            ],
+            'spesifikasi' => [
+                'type' => 'VARCHAR',
                 'constraint' => '100',
                 'null' => true
             ],
-            // spesifikasi / jenis / merek
-            'item_spec'       => [
-                'type'       => 'VARCHAR',
-                'constraint' => '100',
-                'null' => true
-            ],
-            // tahun perolehan
-            'obtained_year'       => [
-                'type'       => 'INT',
+            'tahun_perolehan' => [
+                'type' => 'INT',
                 'constraint' => '5',
                 'null' => true
             ],
-            // nilai satuan / harga
-            'unit_value'       => [
-                'type'       => 'INT',
+            'nilai_satuan' => [
+                'type' => 'INT',
                 'constraint' => '20',
                 'null' => true
             ],
-            // kondisi
-            'condition'       => [
-                'type'       => 'VARCHAR',
+            'kondisi' => [
+                'type' => 'VARCHAR',
                 'constraint' => '100',
                 'null' => true
             ],
-            // jumlah
-            'total'       => [
-                'type'       => 'INT',
+            'jumlah' => [
+                'type' => 'INT',
                 'constraint' => '10',
                 'null' => true
             ],
-            // unit pengguna
-            'user_unit'       => [
-                'type'       => 'VARCHAR',
+            'pengguna' => [
+                'type' => 'VARCHAR',
                 'constraint' => '100',
                 'null' => true
             ],
-            // jenis kepemilikan
-            'ownership_type'       => [
-                'type'       => 'VARCHAR',
+            'unit_pengguna' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+                'null' => true
+            ],
+            'jenis_kepemilikan' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+                'null' => true
+            ],
+            'kolom_keterangan' => [
+                'type' => 'VARCHAR',
                 'constraint' => '100',
                 'null' => true
             ],
             'created_at' => [
                 'type' => 'DATETIME',
-                'null' => true,
+                'null' => true
             ],
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true
             ]
         ]);
-        $this->forge->addKey('id_lab', true);
-        $this->forge->createTable('laboratorium');
+        $this->forge->addKey('id', true);   // set primary key
+        $this->forge->createTable('peralatan_dan_mesin');    // set table name
     }
 
     public function down()
     {
-        $this->forge->dropTable('laboratorium');
+        $this->forge->dropTable('peralatan_dan_mesin');
     }
 }

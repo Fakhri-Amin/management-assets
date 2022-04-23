@@ -42,7 +42,7 @@ class Persediaan extends Migration
             ],
             'nilai_satuan' => [
                 'type' => 'INT',
-                'constraint' => '10',
+                'constraint' => '20',
                 'null' => true
             ],
             'jumlah_barang_masuk' => [

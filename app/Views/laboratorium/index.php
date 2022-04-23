@@ -64,17 +64,17 @@
                             <td><?= $data['user_unit'] ?></td>
                             <td><?= $data['ownership_type'] ?></td>
                             <td>
-                                <a class="btn btn-success badge btn-sm" href="/laboratorium/edit/<?= $data['id_lab'] ?>">
+                                <a class="btn btn-success btn-sm" href="/laboratorium/edit/<?= $data['id_lab'] ?>">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <!-- <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
+                                <!-- <a class="btn btn-danger btn-sm" href="/laboratorium/delete">
                                     <i class="bi bi-trash-fill"></i>
                                 </a> -->
 
                                 <form action="/laboratorium/<?= $data['id_lab'] ?>" method="post" class="d-inline">
                                     <?= csrf_field() ?>
                                     <input type="hidden" value="DELETE" name="_method">
-                                    <button type="submit" class="btn btn-sm btn-danger badge" onclick="return confirm('apakah anda yakin ingin dihapus?')">
+                                    <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
                                         <i class="bi bi-trash-fill"></i>
                                     </button>
                                 </form>
