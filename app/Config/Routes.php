@@ -52,6 +52,11 @@ $routes->get('/laboratorium/edit/(:num)', 'Laboratorium::edit/$1');
 $routes->delete('/laboratorium/(:num)', 'Laboratorium::delete/$1');
 // $routes->get('/laboratorium/save', 'Laboratorium::save');
 
+// Aset Lainnya
+$routes->get('/aset_lainnya', 'Aset_lainnya::index');
+$routes->get('/aset_lainnya/edit/(:num)', 'Aset_lainnya::edit/$1');
+$routes->delete('/aset_lainnya/(:num)', 'Aset_lainnya::delete/$1');
+
 
 
 /*
