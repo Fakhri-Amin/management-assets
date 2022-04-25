@@ -20,21 +20,28 @@
             </a>
         </div>
         <div class="card-body">
+            <!-- jika ada flash data -->
+            <?php if (session()->getFlashdata('message')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?= session()->getFlashdata('message'); ?>
+                </div>
+            <?php endif; ?>
+
             <table id="datatablesSimple" class="data-profil">
                 <thead>
                     <tr>
-                        <th>no</th>
-                        <th>foto barang</th>
-                        <th>kode barang</th>
-                        <th>nama barang</th>
-                        <th>spesifikasi</th>
-                        <th>tahun perolehan</th>
-                        <th>nilai satuan</th>
+                        <th>No</th>
+                        <th>Foto Barang</th>
+                        <th>Kode Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Spesifikasi / Jenis / Merek</th>
+                        <th>Tahun Perolehan</th>
+                        <th>Nilai Satuan / Harga</th>
                         <th>Jumlah Barang Masuk</th>
                         <th>Jumlah Barang Keluar</th>
                         <th>Sisa Barang</th>
                         <th>Unit Pengguna Barang</th>
-                        <th>aksi</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +50,7 @@
                         <tr>
                             <td><?= $no++ ?></td>
                             <td>
-                                <img src="/img/laboratorium/<?= $data['foto_barang'] ?>" alt="<?= $data['foto_barang'] ?>" title="<?= $data['foto_barang'] ?>" width="100">
+                                <img src="/img/persediaan/<?= $data['foto_barang'] ?>" alt="<?= $data['foto_barang'] ?>" title="<?= $data['foto_barang'] ?>" width="100">
                             </td>
                             <td><?= $data['kode_barang']; ?></td>
                             <td><?= $data['nama_barang']; ?></td>
@@ -55,12 +62,16 @@
                             <td><?= $data['sisa_barang']; ?></td>
                             <td><?= $data['unit_pengguna_barang']; ?></td>
                             <td>
-                                <a class="btn btn-success badge btn-sm" href="/laboratorium/edit">
+                                <a class="btn btn-success btn-sm" href="/persediaan/edit/<?= $data['id']; ?>">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
-                                    <i class="bi bi-trash-fill"></i>
-                                </a>
+                                <form action="/persediaan/<?= $data['id']; ?>" method="POST" class="d-inline">
+                                    <?= csrf_field(); ?>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>

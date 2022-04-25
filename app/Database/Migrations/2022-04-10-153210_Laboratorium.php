@@ -48,7 +48,7 @@ class Laboratorium extends Migration
             // nilai satuan / harga
             'unit_value'       => [
                 'type'       => 'INT',
-                'constraint' => '10',
+                'constraint' => '20',
                 'null' => true
             ],
             // kondisi

@@ -32,18 +32,18 @@
             <table id="datatablesSimple" class="data-profil">
                 <thead>
                     <tr>
-                        <th>no</th>
-                        <th>foto barang</th>
-                        <th>nama barang</th>
-                        <th>kode barang</th>
-                        <th>spesifikasi</th>
-                        <th>tahun perolehan</th>
-                        <th>nilai satuan</th>
-                        <th>kondisi</th>
-                        <th>jumlah</th>
-                        <th>unit pengguna</th>
-                        <th>jenis kepemilian</th>
-                        <th>aksi</th>
+                        <th>No</th>
+                        <th>Foto Barang</th>
+                        <th>Kode Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Spesifikasi / Jenis / Merek</th>
+                        <th>Tahun Perolehan</th>
+                        <th>Nilai Satuan / Harga</th>
+                        <th>Kondisi</th>
+                        <th>Jumlah</th>
+                        <th>Unit Pengguna</th>
+                        <th>Jenis Kepemilian</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,8 +54,8 @@
                             <td>
                                 <img src="/img/laboratorium/<?= $data['item_photo'] ?>" alt="<?= $data['item_photo'] ?>" title="<?= $data['item_photo'] ?>" width="100">
                             </td>
-                            <td><?= $data['item_name'] ?></td>
                             <td><?= $data['item_code'] ?></td>
+                            <td><?= $data['item_name'] ?></td>
                             <td><?= $data['item_spec'] ?></td>
                             <td><?= $data['obtained_year'] ?></td>
                             <td><?= $data['unit_value'] ?></td>
@@ -64,17 +64,17 @@
                             <td><?= $data['user_unit'] ?></td>
                             <td><?= $data['ownership_type'] ?></td>
                             <td>
-                                <a class="btn btn-success badge btn-sm" href="/laboratorium/edit/<?= $data['id_lab'] ?>">
+                                <a class="btn btn-success btn-sm" href="/laboratorium/edit/<?= $data['id_lab'] ?>">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <!-- <a class="btn btn-danger badge btn-sm" href="/laboratorium/delete">
+                                <!-- <a class="btn btn-danger btn-sm" href="/laboratorium/delete">
                                     <i class="bi bi-trash-fill"></i>
                                 </a> -->
 
                                 <form action="/laboratorium/<?= $data['id_lab'] ?>" method="post" class="d-inline">
                                     <?= csrf_field() ?>
                                     <input type="hidden" value="DELETE" name="_method">
-                                    <button type="submit" class="btn btn-sm btn-danger badge" onclick="return confirm('apakah anda yakin ingin dihapus?')">
+                                    <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
                                         <i class="bi bi-trash-fill"></i>
                                     </button>
                                 </form>

@@ -41,11 +41,10 @@ class Laboratorium extends BaseController
     // method untuk menampilkan halaman ubah data
     public function edit($id)
     {
-        session();  // diperlukan untuk menerima validasi dari method save bagian cek validasi input
         $data = [
             'title' => 'Edit barang laboratorium',
             'validation' => \Config\Services::validation(),  // ambil validasi
-            'dataLab' => $this->labModel->getData($id)
+            'data' => $this->labModel->getData($id)
         ];
         return view('laboratorium/edit', $data);
     }
@@ -57,11 +56,11 @@ class Laboratorium extends BaseController
         // validasi input
         if (!$this->validate([
             'item_photo' => [
-                'rules' => 'max_size[item_photo,1024]|is_image[item_photo]|mime_in[item_photo,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[item_photo,2048]|is_image[item_photo]|mime_in[item_photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'max_size' => 'ukuran gambar terlalu besar',
-                    'is_image' => 'yang anda pilih bukan gambar',
-                    'mime_in' => 'yang anda pilih bukan gambar'
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'is_image' => 'Yang anda pilih bukan gambar',
+                    'mime_in' => 'Yang anda pilih bukan gambar'
                 ]
             ]
         ])) {
@@ -123,9 +122,9 @@ class Laboratorium extends BaseController
             'item_photo' => [
                 'rules' => 'max_size[item_photo,1024]|is_image[item_photo]|mime_in[item_photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'max_size' => 'ukuran gambar terlalu besar',
-                    'is_image' => 'yang anda pilih bukan gambar',
-                    'mime_in' => 'yang anda pilih bukan gambar'
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'is_image' => 'Yang anda pilih bukan gambar',
+                    'mime_in' => 'Yang anda pilih bukan gambar'
                 ]
             ]
         ])) {
@@ -186,7 +185,7 @@ class Laboratorium extends BaseController
 
 
         $this->labModel->delete($id);
-        session()->setFlashdata('message', 'Succesfully deleted!');
+        session()->setFlashdata('message', 'Berhasil menghapus data!');
         return redirect()->to('/laboratorium');
     }
 }

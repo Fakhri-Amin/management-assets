@@ -16,9 +16,10 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <!-- menu  -->
-                        <a class="nav-link" href="/tanah-dan-bangunan">Tanah dan bangunan</a>
+                        <a class="nav-link" href="/peralatan_dan_mesin">Peralatan dan Mesin</a>
                         <a class="nav-link" href="/laboratorium">Laboratorium</a>
                         <a class="nav-link" href="/persediaan">Persediaan</a>
+                        <a class="nav-link" href="/aset_lainnya">Aset Lainnya</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -52,15 +53,6 @@
                         </div>
                     </nav>
                 </div>
-                <div class="sb-sidenav-menu-heading">Addons</div>
-                <a class="nav-link" href="charts.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Charts
-                </a>
-                <a class="nav-link" href="tables.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Tables
-                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">
