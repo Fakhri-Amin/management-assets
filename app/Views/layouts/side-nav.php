@@ -19,6 +19,7 @@
                         <a class="nav-link" href="/peralatan_dan_mesin">Peralatan dan Mesin</a>
                         <a class="nav-link" href="/laboratorium">Laboratorium</a>
                         <a class="nav-link" href="/persediaan">Persediaan</a>
+                        <a class="nav-link" href="/meubellair">meubellair</a>
                         <a class="nav-link" href="/aset_lainnya">Aset Lainnya</a>
                     </nav>
                 </div>

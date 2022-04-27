@@ -6,15 +6,15 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="#">laboratorium</a></li>
+        <li class="breadcrumb-item"><a href="#">meubellair</a></li>
         <li class="breadcrumb-item active">daftar</li>
     </ol>
 
     <div class="card mb-4">
         <div class="card-header text-center">
             <i class="fas fa-table me-1"></i>
-            Data Laboratorium
-            <a class="btn btn-primary btn-sm float-end" href="/laboratorium/create">
+            Data Meubellair
+            <a class="btn btn-primary btn-sm float-end" href="/meubellair/create">
                 <i class="fas fa-solid fa-plus"></i>
                 Tambah Data
             </a>
@@ -41,6 +41,7 @@
                         <th>Nilai Satuan / Harga</th>
                         <th>Kondisi</th>
                         <th>Jumlah</th>
+                        <th>Pengguna</th>
                         <th>Unit Pengguna</th>
                         <th>Jenis Kepemilian</th>
                         <th>Aksi</th>
@@ -52,26 +53,27 @@
                         <tr>
                             <td><?= $no++ ?></td>
                             <td>
-                                <img src="/img/laboratorium/<?= $data['item_photo'] ?>" alt="<?= $data['item_photo'] ?>" title="<?= $data['item_photo'] ?>" width="100">
+                                <img src="/img/meubellair/<?= $data['foto_barang'] ?>" alt="<?= $data['foto_barang'] ?>" title="<?= $data['foto_barang'] ?>" width="100">
                             </td>
-                            <td><?= $data['item_code'] ?></td>
-                            <td><?= $data['item_name'] ?></td>
-                            <td><?= $data['item_spec'] ?></td>
-                            <td><?= $data['obtained_year'] ?></td>
-                            <td><?= $data['unit_value'] ?></td>
-                            <td><?= $data['condition'] ?></td>
-                            <td><?= $data['total'] ?></td>
-                            <td><?= $data['user_unit'] ?></td>
-                            <td><?= $data['ownership_type'] ?></td>
+                            <td><?= $data['kode_barang'] ?></td>
+                            <td><?= $data['nama_barang'] ?></td>
+                            <td><?= $data['spesifikasi'] ?></td>
+                            <td><?= $data['tahun_perolehan'] ?></td>
+                            <td><?= $data['nilai_satuan'] ?></td>
+                            <td><?= $data['kondisi'] ?></td>
+                            <td><?= $data['jumlah'] ?></td>
+                            <td><?= $data['pengguna'] ?></td>
+                            <td><?= $data['unit_pengguna'] ?></td>
+                            <td><?= $data['jenis_kepemilikan'] ?></td>
                             <td>
-                                <a class="btn btn-success btn-sm" href="/laboratorium/edit/<?= $data['id_lab'] ?>">
+                                <a class="btn btn-success btn-sm" href="/meubellair/edit/<?= $data['id'] ?>">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
-                                <!-- <a class="btn btn-danger btn-sm" href="/laboratorium/delete">
+                                <!-- <a class="btn btn-danger btn-sm" href="/meubellair/delete">
                                     <i class="bi bi-trash-fill"></i>
                                 </a> -->
 
-                                <form action="/laboratorium/<?= $data['id_lab'] ?>" method="post" class="d-inline">
+                                <form action="/meubellair/<?= $data['id'] ?>" method="post" class="d-inline">
                                     <?= csrf_field() ?>
                                     <input type="hidden" value="DELETE" name="_method">
                                     <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
@@ -82,7 +84,6 @@
                             </td>
                         </tr>
                     <?php endforeach; ?>
-
                 </tbody>
             </table>
         </div>
