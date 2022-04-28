@@ -1,0 +1,140 @@
+ERROR - 2022-04-27 00:15:56 --> Unknown column 'created_at' in 'field list'
+ERROR - 2022-04-27 00:16:45 --> Unknown column 'created_at' in 'field list'
+ERROR - 2022-04-27 00:17:52 --> Unknown column 'created_at' in 'field list'
+ERROR - 2022-04-27 00:18:10 --> Unknown column 'created_at' in 'field list'
+CRITICAL - 2022-04-27 00:38:39 --> Undefined array key "foto_barang"
+#0 C:\xampp\htdocs\management-assets\app\Views\laporan_yang_dibutuhkan\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 51)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('laporan_yang_di...', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Laporan_yang_dibutuhkan.php(27): view('laporan_yang_di...', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Laporan_yang_dibutuhkan->index()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan_yang_dibutuhkan))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-27 01:07:24 --> Too few arguments to function App\Controllers\Peralatan_dan_mesin::edit(), 0 passed in C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Peralatan_dan_mesin->edit()
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Peralatan_dan_mesin))
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-04-27 01:08:08 --> Too few arguments to function App\Controllers\Peralatan_dan_mesin::edit(), 0 passed in C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Peralatan_dan_mesin->edit()
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Peralatan_dan_mesin))
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-04-27 01:08:12 --> Too few arguments to function App\Controllers\Peralatan_dan_mesin::edit(), 0 passed in C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Peralatan_dan_mesin->edit()
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Peralatan_dan_mesin))
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-04-27 01:09:46 --> Too few arguments to function App\Controllers\Peralatan_dan_mesin::edit(), 0 passed in C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Peralatan_dan_mesin->edit()
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Peralatan_dan_mesin))
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-04-27 01:10:15 --> Too few arguments to function App\Controllers\Peralatan_dan_mesin::edit(), 0 passed in C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Peralatan_dan_mesin->edit()
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Peralatan_dan_mesin))
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-04-27 07:25:10 --> Too few arguments to function App\Controllers\Admin_bmn::edit(), 0 passed in C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Admin_bmn->edit()
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_bmn))
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-04-27 07:25:45 --> unlink(img/admin_bmn/monitor3.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(img/admi...', 'C:\\xampp\\htdocs...', 84)
+#1 C:\xampp\htdocs\management-assets\app\Controllers\Admin_bmn.php(84): unlink('img/admin_bmn/m...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Admin_bmn->update('3')
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_bmn))
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2022-04-27 07:54:19 --> Table 'aset_lainnya' already exists
+CRITICAL - 2022-04-27 08:08:23 --> Undefined array key "penyedia_perusahaan"
+#0 C:\xampp\htdocs\management-assets\app\Views\admin_bmn\index.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 57)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin_bmn/index', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(26): view('admin_bmn/index', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->index()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-27 08:08:44 --> Undefined array key "penyedia_perusahaan"
+#0 C:\xampp\htdocs\management-assets\app\Views\admin_bmn\index.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 57)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin_bmn/index', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(26): view('admin_bmn/index', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->index()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-27 08:09:08 --> Undefined array key "penyedia_perusahaan"
+#0 C:\xampp\htdocs\management-assets\app\Views\admin_bmn\index.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 57)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin_bmn/index', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(26): view('admin_bmn/index', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->index()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-27 08:24:21 --> Undefined array key ""
+#0 C:\xampp\htdocs\management-assets\app\Views\tanah_dan_bangunan\edit.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 61)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('tanah_dan_bangu...', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(48): view('tanah_dan_bangu...', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->edit('1')
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-27 08:25:02 --> Undefined array key "batas_lahan_tanah"
+#0 C:\xampp\htdocs\management-assets\app\Views\tanah_dan_bangunan\edit.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 100)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('tanah_dan_bangu...', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(48): view('tanah_dan_bangu...', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->edit('1')
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-27 08:26:18 --> Undefined array key "foto_lama"
+#0 C:\xampp\htdocs\management-assets\app\Views\tanah_dan_bangunan\edit.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 52)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('tanah_dan_bangu...', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(48): view('tanah_dan_bangu...', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->edit('2')
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
