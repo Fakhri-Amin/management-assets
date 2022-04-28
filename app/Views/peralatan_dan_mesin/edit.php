@@ -5,7 +5,7 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="/peralatan_dan_mesin">peralatan dan Mesin</a></li>
+        <li class="breadcrumb-item"><a href="/peralatan_dan_mesin"><?= $menu; ?></a></li>
         <li class="breadcrumb-item active">edit data</li>
     </ol>
 
@@ -73,38 +73,38 @@
                             <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" required value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : $data['tahun_perolehan']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="tahun_perolehan" class="form-label">Nilai Satuan / Harga</label>
+                            <label for="nilai_satuan" class="form-label">Nilai Satuan / Harga</label>
                             <input type="text" class="form-control" id="nilai_satuan" name="nilai_satuan" required value="<?= (old('nilai_satuan')) ? old('nilai_satuan') : $data['nilai_satuan']; ?>">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="mb-3">
-                            <label for="nilai_satuan" class="form-label">Kondisi</label>
-                            <select class="form-select" aria-label="Default select example" name="kondisi" required>
-                                <option selected>- - Jenis Kerusakan --</option>
-                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Baik'; ?>">Baik</option>
-                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Rusak Ringan'; ?>">Rusak Ringan</option>
-                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Rusak Berat'; ?>">Rusak Berat</option>
+                            <label for="kondisi" class="form-label">Kondisi</label>
+                            <select class="form-select" aria-label="Default select example" name="kondisi" id="kondisi" required>
+                                <option selected>-- Jenis Kerusakan --</option>
+                                <option><?= (old('kondisi')) ? old('kondisi') : 'Baik'; ?></option>
+                                <option><?= (old('kondisi')) ? old('kondisi') : 'Rusak Ringan'; ?></option>
+                                <option><?= (old('kondisi')) ? old('kondisi') : 'Rusak Berat'; ?></option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="jumlah_barang_masuk" class="form-label">Jumlah</label>
+                            <label for="jumlah" class="form-label">Jumlah</label>
                             <input type="text" class="form-control" id="jumlah" name="jumlah" required value="<?= (old('jumlah')) ? old('jumlah') : $data['jumlah']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="jumlah_barang_keluar" class="form-label">Pengguna</label>
+                            <label for="pengguna" class="form-label">Pengguna</label>
                             <input type="text" class="form-control" id="pengguna" name="pengguna" required value="<?= (old('pengguna')) ? old('pengguna') : $data['pengguna']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="sisa_barang" class="form-label">Unit Pengguna</label>
+                            <label for="unit_pengguna" class="form-label">Unit Pengguna</label>
                             <input type="text" class="form-control" id="unit_pengguna" name="unit_pengguna" required value="<?= (old('unit_pengguna')) ? old('unit_pengguna') : $data['unit_pengguna']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="unit_pengguna_barang" class="form-label">Jenis Kepemilikan</label>
+                            <label for="jenis_kepemilikan" class="form-label">Jenis Kepemilikan</label>
                             <input type="text" class="form-control" id="jenis_kepemilikan" name="jenis_kepemilikan" required value="<?= (old('jenis_kepemilikan')) ? old('jenis_kepemilikan') : $data['jenis_kepemilikan']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="unit_pengguna_barang" class="form-label">Kolom Keterangan</label>
+                            <label for="kolom_keterangan" class="form-label">Kolom Keterangan</label>
                             <input type="text" class="form-control" id="kolom_keterangan" name="kolom_keterangan" required value="<?= (old('kolom_keterangan')) ? old('kolom_keterangan') : $data['kolom_keterangan']; ?>">
                         </div>
                     </div>

@@ -11,13 +11,15 @@ class Aset_lainnya extends BaseController
     public function __construct()
     {
         $this->asetLainnyaModel = new ModelAsetLainnya();
+        $this->menu = "Asset Lainnya";
     }
 
     // menampilkan semua data
     public function index()
     {
         $data = [
-            'title' => 'Daftar barang Aset Lainnya',
+            'title' => 'Daftar ' . $this->menu,
+            'menu' => $this->menu,
             'datas' => $this->asetLainnyaModel->getData()
         ];
         return view('aset_lainnya/index', $data);
@@ -26,7 +28,8 @@ class Aset_lainnya extends BaseController
     public function create()
     {
         $data = [
-            'title' => 'Tambah Data Aset Lainnya',
+            'title' => 'Tambah Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation()
         ];
         return view('aset_lainnya/create', $data);
@@ -36,7 +39,8 @@ class Aset_lainnya extends BaseController
     public function edit($id)
     {
         $data = [
-            'title' => 'Form Edit Data Aset Lainnya',
+            'title' => 'Form Edit Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation(),
             'data' => $this->asetLainnyaModel->getData($id)
         ];

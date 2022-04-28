@@ -11,13 +11,15 @@ class Persediaan extends BaseController
     public function __construct()
     {
         $this->persediaanModel = new ModelPersediaan();
+        $this->menu = "Persediaan";
     }
 
     // menampilkan semua data
     public function index()
     {
         $data = [
-            'title' => 'Daftar barang Persediaan',
+            'title' => 'Daftar ' . $this->menu,
+            'menu' => $this->menu,
             'datas' => $this->persediaanModel->getData()
         ];
         return view('persediaan/index', $data);
@@ -26,7 +28,8 @@ class Persediaan extends BaseController
     public function create()
     {
         $data = [
-            'title' => 'Tambah Data Persediaan',
+            'title' => 'Tambah Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation()
         ];
         return view('persediaan/create', $data);
@@ -36,7 +39,8 @@ class Persediaan extends BaseController
     public function edit($id)
     {
         $data = [
-            'title' => 'Form Edit Data Persediaan',
+            'title' => 'Form Edit Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation(),
             'data' => $this->persediaanModel->getData($id)
         ];
