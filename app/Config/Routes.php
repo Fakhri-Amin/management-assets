@@ -33,9 +33,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 
-// Tanah dan Bangunan
+// Home
 $routes->get('/', 'Pages::index');
-$routes->get('/tanah-dan-bangunan', 'TanahBangunan::index');
 
 // Tanah Dan Bangunan
 $routes->get('/tanah_dan_bangunan', 'Tanah_dan_bangunan::index');
@@ -63,7 +62,7 @@ $routes->get('/laboratorium/edit/(:num)', 'Laboratorium::edit/$1');
 $routes->delete('/laboratorium/(:num)', 'Laboratorium::delete/$1');
 // $routes->get('/laboratorium/save', 'Laboratorium::save');
 
-// meubellair
+// mMeubellair
 $routes->get('/meubellair', 'meubellair::index');
 $routes->get('/meubellair/edit/(:num)', 'meubellair::edit/$1');
 $routes->delete('/meubellair/(:num)', 'meubellair::delete/$1');

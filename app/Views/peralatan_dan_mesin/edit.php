@@ -82,9 +82,9 @@
                             <label for="kondisi" class="form-label">Kondisi</label>
                             <select class="form-select" aria-label="Default select example" name="kondisi" id="kondisi" required>
                                 <option selected>-- Jenis Kerusakan --</option>
-                                <option><?= (old('kondisi')) ? old('kondisi') : 'Baik'; ?></option>
-                                <option><?= (old('kondisi')) ? old('kondisi') : 'Rusak Ringan'; ?></option>
-                                <option><?= (old('kondisi')) ? old('kondisi') : 'Rusak Berat'; ?></option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Baik'; ?>">Baik</option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Rusak Ringan'; ?>">Rusak Ringan</option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Rusak Berat'; ?>">Rusak Berat</option>
                             </select>
                         </div>
                         <div class="mb-3">

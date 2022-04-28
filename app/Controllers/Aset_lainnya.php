@@ -52,7 +52,7 @@ class Aset_lainnya extends BaseController
         // Validasi Input
         if (!$this->validate([
             'foto_barang' => [
-                'rules' => 'max_size[foto_barang,1024]|is_image[foto_barang]|mime_in[foto_barang,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[foto_barang,2048]|is_image[foto_barang]|mime_in[foto_barang,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'is_image' => 'Yang anda pilih bukan gambar',

@@ -35,6 +35,9 @@
                 <?= csrf_field(); ?>
 
                 <input type="hidden" name="foto_lama" value="<?= $data['foto_barang'] ?>">
+                <input type="hidden" name="dokumen_nomor_kepemilikan_lama" value="<?= $data['nomor_kepemilikan_sertifikat'] ?>">
+                <input type="hidden" name="dokumen_denah_gedung_lama" value="<?= $data['denah_gedung'] ?>">
+                <input type="hidden" name="dokumen_nomor_imb_lama" value="<?= $data['nomor_imb'] ?>">
 
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
@@ -59,9 +62,9 @@
                             <label for="kondisi_bangunan" class="form-label">Kondisi Bangunan</label>
                             <select class="form-select" aria-label="Default select example" name="kondisi_bangunan" id="kondisi_bangunan" required>
                                 <option selected>-- Jenis Kerusakan --</option>
-                                <option><?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Baik'; ?></option>
-                                <option><?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Ringan'; ?></option>
-                                <option><?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Berat'; ?></option>
+                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Baik'; ?>">Baik</option>
+                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Ringan'; ?>">Rusak Ringan</option>
+                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Berat'; ?>">Rusak Berat</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -112,15 +115,28 @@
                         </div>
                         <div class="mb-3">
                             <label for="batas_lahan" class="form-label">Batas Lahan</label>
-                            <input type="text" class="form-control" id="batas_lahan" name="batas_lahan" required value="<?= (old('batas_lahan')) ? old('batas_lahan') : $data['batas_lahan']; ?>">
+                            <!-- <input type="text" class="form-control" id="batas_lahan" name="batas_lahan" required value="<?= (old('batas_lahan')) ? old('batas_lahan') : ''; ?>"> -->
+                            <select class="form-select" aria-label="Default select example" name="batas_lahan" id="batas_lahan" required>
+                                <option selected>-- Batas Lahan --</option>
+                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Utara'; ?>">Utara</option>
+                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Selatan'; ?>">Selatan</option>
+                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Barat'; ?>">Barat</option>
+                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Timur'; ?>">Timur</option>
+                            </select>
                         </div>
                         <div class="mb-3">
-                            <label for="denah_gedung" class="form-label">Denah Gedung</label>
+                            <label for="denah_gedung" class="form-label <?= ($validation->hasError('denah_gedung')) ? 'is-invalid' : '' ?>">Denah Gedung</label>
                             <input type="file" class="form-control" id="denah_gedung" name="denah_gedung" required value="<?= (old('denah_gedung')) ? old('denah_gedung') : $data['denah_gedung']; ?>">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                <?= $validation->getError('denah_gedung'); ?>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label for="nomor_imb" class="form-label">Nomor IMB</label>
+                            <label for="nomor_imb" class="form-label <?= ($validation->hasError('nomor_imb')) ? 'is-invalid' : '' ?>">Nomor IMB</label>
                             <input type="file" class="form-control" id="nomor_imb" name="nomor_imb" required value="<?= (old('nomor_imb')) ? old('nomor_imb') : $data['nomor_imb']; ?>">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                <?= $validation->getError('nomor_imb'); ?>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="jenis_kepemilikan" class="form-label">Jenis Kepemilikan</label>

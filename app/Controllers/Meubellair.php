@@ -11,6 +11,7 @@ class Meubellair extends BaseController
     public function __construct()
     {
         $this->meubellairModel = new ModelMeubellair();
+        $this->menu = "Meuballair";
     }
 
 
@@ -18,7 +19,8 @@ class Meubellair extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Daftar barang meubellair',
+            'title' => 'Daftar ' . $this->menu,
+            'menu' => $this->menu,
             'datas' => $this->meubellairModel->getData(),
         ];
         return view('meubellair/index', $data);
@@ -30,7 +32,8 @@ class Meubellair extends BaseController
     {
         session();
         $data = [
-            'title' => 'Tambah barang meubellair',
+            'title' => 'Tambah Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation()  // ambil validasi
         ];
         return view('meubellair/create', $data);
@@ -41,7 +44,8 @@ class Meubellair extends BaseController
     public function edit($id)
     {
         $data = [
-            'title' => 'Edit barang meubellair',
+            'title' => 'Form Edit Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation(),  // ambil validasi
             'data' => $this->meubellairModel->getData($id)
         ];
