@@ -21,6 +21,7 @@
                         <a class="nav-link" href="/persediaan">Persediaan</a>
                         <a class="nav-link" href="/laboratorium">Laboratorium</a>
                         <a class="nav-link" href="/admin_bmn">Admin BMN</a>
+                        <a class="nav-link" href="/meubellair">Meubellair</a>
                         <a class="nav-link" href="/aset_lainnya">Aset Lainnya</a>
                         <a class="nav-link" href="/laporan_yang_dibutuhkan">Laporan Yang Dibutuhkan</a>
                     </nav>
