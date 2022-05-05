@@ -17,6 +17,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <!-- menu  -->
                         <a class="nav-link" href="/tanah_dan_bangunan">Tanah Dan Bangunan</a>
+                        <a class="nav-link" href="/kendaraan_bermotor">Kendaraan Bermotor</a>
                         <a class="nav-link" href="/peralatan_dan_mesin">Peralatan Dan Mesin</a>
                         <a class="nav-link" href="/persediaan">Persediaan</a>
                         <a class="nav-link" href="/laboratorium">Laboratorium</a>

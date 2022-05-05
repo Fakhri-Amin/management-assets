@@ -67,13 +67,13 @@ class Tanah_dan_bangunan extends BaseController
                 ]
             ],
             'denah_gedung' => [
-                'rules' => 'max_size[nomor_kepemilikan_sertifikat,5120]',
+                'rules' => 'max_size[denah_gedung,5120]',
                 'errors' => [
                     'max_size' => 'Ukuran file terlalu besar',
                 ]
             ],
             'nomor_imb' => [
-                'rules' => 'max_size[nomor_kepemilikan_sertifikat,5120]',
+                'rules' => 'max_size[nomor_imb,5120]',
                 'errors' => [
                     'max_size' => 'Ukuran file terlalu besar',
                 ]
@@ -327,13 +327,13 @@ class Tanah_dan_bangunan extends BaseController
 
         // Denah Gedung : Cek jika null atau tidak, jika tidak null maka hapus
         if ($data['denah_gedung'] != null) {
-            // hapus file dokumen nomor sertifikat lama
+            // hapus file dokumen nomor denah gedung
             unlink('document/tanah_dan_bangunan/' . $data['denah_gedung']);
         }
 
         // Nomor IMB : Cek jika null atau tidak, jika tidak null maka hapus
         if ($data['nomor_imb'] != null) {
-            // hapus file dokumen nomor sertifikat lama
+            // hapus file dokumen nomor IMB
             unlink('document/tanah_dan_bangunan/' . $data['nomor_imb']);
         }
 

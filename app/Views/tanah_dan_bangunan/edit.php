@@ -108,6 +108,9 @@
                         <div class="mb-3">
                             <label for="nomor_kepemilikan_sertifikat" class="form-label">Nomor Kepemilikan / Sertifikat</label>
                             <input type="file" class="form-control" id="nomor_kepemilikan_sertifikat" name="nomor_kepemilikan_sertifikat" required value="<?= (old('nomor_kepemilikan_sertifikat')) ? old('nomor_kepemilikan_sertifikat') : $data['nomor_kepemilikan_sertifikat']; ?>">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                <?= $validation->getError('nomor_kepemilikan_sertifikat'); ?>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>

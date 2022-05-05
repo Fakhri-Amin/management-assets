@@ -41,6 +41,11 @@ $routes->get('/tanah_dan_bangunan', 'Tanah_dan_bangunan::index');
 $routes->get('/tanah_dan_bangunan/edit/(:num)', 'Tanah_dan_bangunan::edit/$1');
 $routes->delete('/tanah_dan_bangunan/(:num)', 'Tanah_dan_bangunan::delete/$1');
 
+// Kendaraan Bermotor
+$routes->get('/kendaraan_bermotor', 'Kendaraan_bermotor::index');
+$routes->get('/kendaraan_bermotor/edit/(:num)', 'Kendaraan_bermotor::edit/$1');
+$routes->delete('/kendaraan_bermotor/(:num)', 'Kendaraan_bermotor::delete/$1');
+
 // Peralatan dan Mesin
 $routes->get('/peralatan_dan_mesin', 'Peralatan_dan_mesin::index');
 $routes->get('/peralatan_dan_mesin/edit/(:num)', 'Peralatan_dan_mesin::edit/$1');

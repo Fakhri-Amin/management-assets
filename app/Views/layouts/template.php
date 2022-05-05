@@ -63,6 +63,20 @@
                 imgPreview.src = e.target.result;
             }
         }
+
+        function select_stnk() {
+            // Get the checkbox
+            var checkBox = document.getElementById("cek_stnk");
+            // Get the output text
+            var stnk_bpkb = document.getElementById("checkedOptionStnk");
+
+            // If the checkbox is checked, display the output stnk_bpkb
+            if (checkBox.checked == true) {
+                stnk_bpkb.style.display = "block";
+            } else {
+                stnk_bpkb.style.display = "none";
+            }
+        }
     </script>
 
 </body>
