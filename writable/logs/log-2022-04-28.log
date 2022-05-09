@@ -1,0 +1,80 @@
+CRITICAL - 2022-04-28 00:03:25 --> Attempt to read property "password" on array
+#0 C:\xampp\htdocs\management-assets\app\Controllers\Login.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->process()
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-28 00:05:19 --> Attempt to read property "password" on array
+#0 C:\xampp\htdocs\management-assets\app\Controllers\Login.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->process()
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-28 00:19:08 --> Attempt to read property "password" on array
+#0 C:\xampp\htdocs\management-assets\app\Controllers\Login.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->process()
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-28 00:19:27 --> Attempt to read property "password" on array
+#0 C:\xampp\htdocs\management-assets\app\Controllers\Login.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->process()
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-28 00:20:55 --> Attempt to read property "password" on array
+#0 C:\xampp\htdocs\management-assets\app\Controllers\Login.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->process()
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-28 00:25:18 --> Attempt to read property "password" on array
+#0 C:\xampp\htdocs\management-assets\app\Controllers\Login.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->process()
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-28 00:33:21 --> Attempt to read property "username" on array
+#0 C:\xampp\htdocs\management-assets\app\Controllers\Login.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 33)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->process()
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-28 01:17:13 --> Class "App\Filters\UsersAuthFilter" not found
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-04-28 01:17:35 --> Class "App\Filters\UsersAuthFilter" not found
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('persediaan', 'before')
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-04-28 01:17:42 --> Class "App\Filters\UsersAuthFilter" not found
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('login', 'before')
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-04-28 01:18:27 --> Class "App\Filters\UsersAuthFilter" not found
+#0 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}

@@ -21,6 +21,7 @@
                         <a class="nav-link" href="/persediaan">Persediaan</a>
                         <a class="nav-link" href="/meubellair">meubellair</a>
                         <a class="nav-link" href="/aset_lainnya">Aset Lainnya</a>
+                        <a class="nav-link" href="/logout">Logout</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

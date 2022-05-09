@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 
+// Register & login
+
 // Tanah dan Bangunan
 $routes->get('/', 'Pages::index');
 $routes->get('/tanah-dan-bangunan', 'TanahBangunan::index');
