@@ -6,14 +6,14 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="#">persediaan</a></li>
+        <li class="breadcrumb-item"><a href="#"><?= $menu; ?></a></li>
         <li class="breadcrumb-item active">list</li>
     </ol>
 
     <div class="card mb-4">
         <div class="card-header text-center">
             <i class="fas fa-table me-1"></i>
-            Data Persediaan
+            Data <?= $menu; ?>
             <a class="btn btn-primary btn-sm float-end" href="/persediaan/create">
                 <i class="fas fa-solid fa-plus"></i>
                 Tambah Data

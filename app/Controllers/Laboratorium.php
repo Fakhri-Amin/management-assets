@@ -12,6 +12,7 @@ class Laboratorium extends BaseController
     public function __construct()
     {
         $this->labModel = new ModelLaboratorium();
+        $this->menu = "Laboratorium";
     }
 
 
@@ -19,7 +20,8 @@ class Laboratorium extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Daftar barang laboratorium',
+            'title' => 'Daftar ' . $this->menu,
+            'menu' => $this->menu,
             'datas' => $this->labModel->getData(),
         ];
         return view('laboratorium/index', $data);
@@ -31,7 +33,8 @@ class Laboratorium extends BaseController
     {
         session();
         $data = [
-            'title' => 'Tambah barang laboratorium',
+            'title' => 'Tambah ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation()  // ambil validasi
         ];
         return view('laboratorium/create', $data);
@@ -42,7 +45,8 @@ class Laboratorium extends BaseController
     public function edit($id)
     {
         $data = [
-            'title' => 'Edit barang laboratorium',
+            'title' => 'Edit ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation(),  // ambil validasi
             'data' => $this->labModel->getData($id)
         ];

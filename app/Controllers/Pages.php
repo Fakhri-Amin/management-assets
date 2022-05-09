@@ -9,7 +9,7 @@ class Pages extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'home'
+            'title' => 'Management Assets | Beranda'
         ];
 
         return view('index', $data);

@@ -11,13 +11,15 @@ class Aset_lainnya extends BaseController
     public function __construct()
     {
         $this->asetLainnyaModel = new ModelAsetLainnya();
+        $this->menu = "Asset Lainnya";
     }
 
     // menampilkan semua data
     public function index()
     {
         $data = [
-            'title' => 'Daftar barang Aset Lainnya',
+            'title' => 'Daftar ' . $this->menu,
+            'menu' => $this->menu,
             'datas' => $this->asetLainnyaModel->getData()
         ];
         return view('aset_lainnya/index', $data);
@@ -26,7 +28,8 @@ class Aset_lainnya extends BaseController
     public function create()
     {
         $data = [
-            'title' => 'Tambah Data Aset Lainnya',
+            'title' => 'Tambah Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation()
         ];
         return view('aset_lainnya/create', $data);
@@ -36,7 +39,8 @@ class Aset_lainnya extends BaseController
     public function edit($id)
     {
         $data = [
-            'title' => 'Form Edit Data Aset Lainnya',
+            'title' => 'Form Edit Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation(),
             'data' => $this->asetLainnyaModel->getData($id)
         ];
@@ -48,7 +52,7 @@ class Aset_lainnya extends BaseController
         // Validasi Input
         if (!$this->validate([
             'foto_barang' => [
-                'rules' => 'max_size[foto_barang,1024]|is_image[foto_barang]|mime_in[foto_barang,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[foto_barang,2048]|is_image[foto_barang]|mime_in[foto_barang,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'is_image' => 'Yang anda pilih bukan gambar',
