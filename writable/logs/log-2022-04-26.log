@@ -1,3 +1,56 @@
+<<<<<<< HEAD
+ERROR - 2022-04-26 01:23:55 --> Unknown column 'alamat_penyedia' in 'field list'
+ERROR - 2022-04-26 01:24:26 --> Unknown column 'alamat_penyedia' in 'field list'
+ERROR - 2022-04-26 01:33:18 --> Unknown column 'alamat_penyedia' in 'field list'
+ERROR - 2022-04-26 01:42:46 --> Unknown column 'alamat_penyedia' in 'field list'
+ERROR - 2022-04-26 01:43:48 --> Unknown column 'alamat_penyedia' in 'field list'
+CRITICAL - 2022-04-26 02:57:35 --> Undefined array key "kode_barang"
+#0 C:\xampp\htdocs\management-assets\app\Views\menu_admin_bmn\index.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 55)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menu_admin_bmn/...', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Menu_admin_bmn.php(24): view('menu_admin_bmn/...', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menu_admin_bmn->index()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu_admin_bmn))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-26 04:04:08 --> Undefined variable $menu
+#0 C:\xampp\htdocs\management-assets\app\Views\admin_bmn\create.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 8)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin_bmn/creat...', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Admin_bmn.php(33): view('admin_bmn/creat...', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Admin_bmn->create()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_bmn))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-04-26 04:05:51 --> unlink(img/admin_bmn/monitor3.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(img/admi...', 'C:\\xampp\\htdocs...', 171)
+#1 C:\xampp\htdocs\management-assets\app\Controllers\Admin_bmn.php(171): unlink('img/admin_bmn/m...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Admin_bmn->delete('3')
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_bmn))
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-04-26 04:06:31 --> Undefined variable $menu
+#0 C:\xampp\htdocs\management-assets\app\Views\admin_bmn\edit.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 8)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('admin_bmn/edit', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Admin_bmn.php(45): view('admin_bmn/edit', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Admin_bmn->edit('1')
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_bmn))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+=======
 ERROR - 2022-04-26 00:49:31 --> Table 'laboratorium' already exists
 ERROR - 2022-04-26 23:50:28 --> Unknown table 'management_assets.meubellair'
 ERROR - 2022-04-26 23:57:34 --> Unknown table 'management_assets.meubellair'
+>>>>>>> 4879f4be2840a2b34b7b978fb70f5c336f4a3979

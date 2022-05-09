@@ -5,7 +5,7 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="/meubellair">meubellair</a></li>
+        <li class="breadcrumb-item"><a href="/meubellair"><?= $menu; ?></a></li>
         <li class="breadcrumb-item active">tambah data</li>
     </ol>
 
@@ -60,7 +60,12 @@
                         </div>
                         <div class="mb-3">
                             <label for="kondisi" class="form-label">Kondisi</label>
-                            <input class="form-control" id="kondisi" name="kondisi" type="text" value="<?= old('kondisi') ?>" required autofocus />
+                            <select class="form-select" aria-label="Default select example" name="kondisi" id="kondisi" required>
+                                <option selected>-- Jenis Kerusakan --</option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Baik'; ?>">Baik</option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Rusak Ringan'; ?>">Rusak Ringan</option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Rusak Berat'; ?>">Rusak Berat</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="jumlah" class="form-label">Jumlah</label>

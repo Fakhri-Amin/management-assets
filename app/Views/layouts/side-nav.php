@@ -16,11 +16,15 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <!-- menu  -->
-                        <a class="nav-link" href="/peralatan_dan_mesin">Peralatan dan Mesin</a>
-                        <a class="nav-link" href="/laboratorium">Laboratorium</a>
+                        <a class="nav-link" href="/tanah_dan_bangunan">Tanah Dan Bangunan</a>
+                        <a class="nav-link" href="/kendaraan_bermotor">Kendaraan Bermotor</a>
+                        <a class="nav-link" href="/peralatan_dan_mesin">Peralatan Dan Mesin</a>
                         <a class="nav-link" href="/persediaan">Persediaan</a>
-                        <a class="nav-link" href="/meubellair">meubellair</a>
+                        <a class="nav-link" href="/laboratorium">Laboratorium</a>
+                        <a class="nav-link" href="/admin_bmn">Admin BMN</a>
+                        <a class="nav-link" href="/meubellair">Meubellair</a>
                         <a class="nav-link" href="/aset_lainnya">Aset Lainnya</a>
+                        <a class="nav-link" href="/laporan_yang_dibutuhkan">Laporan Yang Dibutuhkan</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

@@ -5,7 +5,7 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Static Navigation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="/laboratorium">laboratorium</a></li>
+        <li class="breadcrumb-item"><a href="/laboratorium"><?= $menu; ?></a></li>
         <li class="breadcrumb-item active">edit data</li>
     </ol>
 

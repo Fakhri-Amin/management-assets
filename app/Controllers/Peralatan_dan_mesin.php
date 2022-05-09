@@ -11,13 +11,15 @@ class Peralatan_dan_mesin extends BaseController
     public function __construct()
     {
         $this->peralatan_dan_mesin_model = new ModelPeralatanDanMesin();
+        $this->menu = "Peralatan Dan Mesin";
     }
 
     // menampilkan semua data
     public function index()
     {
         $data = [
-            'title' => 'Daftar Peralatan dan Mesin',
+            'title' => 'Daftar ' . $this->menu,
+            'menu' => $this->menu,
             'datas' => $this->peralatan_dan_mesin_model->getData()
         ];
         return view('peralatan_dan_mesin/index', $data);
@@ -26,7 +28,8 @@ class Peralatan_dan_mesin extends BaseController
     public function create()
     {
         $data = [
-            'title' => 'Tambah Data Peralatan dan Mesin',
+            'title' => 'Tambah Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation()
         ];
         return view('peralatan_dan_mesin/create', $data);
@@ -36,7 +39,8 @@ class Peralatan_dan_mesin extends BaseController
     public function edit($id)
     {
         $data = [
-            'title' => 'Form Edit Data Peralatan dan Mesin',
+            'title' => 'Form Edit Data ' . $this->menu,
+            'menu' => $this->menu,
             'validation' => \Config\Services::validation(),
             'data' => $this->peralatan_dan_mesin_model->getData($id)
         ];
@@ -48,7 +52,7 @@ class Peralatan_dan_mesin extends BaseController
         // Validasi Input
         if (!$this->validate([
             'foto_barang' => [
-                'rules' => 'max_size[foto_barang,1024]|is_image[foto_barang]|mime_in[foto_barang,image/jpg,image/jpeg,image/png]',
+                'rules' => 'max_size[foto_barang,2048]|is_image[foto_barang]|mime_in[foto_barang,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'is_image' => 'Yang anda pilih bukan gambar',
