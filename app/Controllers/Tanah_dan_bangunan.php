@@ -284,23 +284,23 @@ class Tanah_dan_bangunan extends BaseController
 
         // $slug = url_title($this->request->getVar('name'), '-', true);
         $this->tanah_dan_bangunan->save([
-            'foto_barang'     => $filePhotoName,
-            'kondisi_bangunan'  => $this->request->getVar('kondisi_bangunan'),
-            'luas_tanah'      => $this->request->getVar('luas_tanah'),
-            'luas_bangunan'      => $this->request->getVar('luas_bangunan'),
-            'jumlah_bangunan'  => $this->request->getVar('jumlah_bangunan'),
-            'jumlah_ruangan'  => $this->request->getVar('jumlah_ruangan'),
-            'peruntukan_ruang'     => $this->request->getVar('peruntukan_ruang'),
-            'tahun_perolehan'      => $this->request->getVar('tahun_perolehan'),
-            'nilai_bangunan_pekerjaan'          => $this->request->getVar('nilai_bangunan_pekerjaan'),
-            'nilai_satuan_tanah'      => $this->request->getVar('nilai_satuan_tanah'),
-            'luas_halaman_taman' => $this->request->getVar('luas_halaman_taman'),
+            'foto_barang'                  => $filePhotoName,
+            'kondisi_bangunan'             => $this->request->getVar('kondisi_bangunan'),
+            'luas_tanah'                   => $this->request->getVar('luas_tanah'),
+            'luas_bangunan'                => $this->request->getVar('luas_bangunan'),
+            'jumlah_bangunan'              => $this->request->getVar('jumlah_bangunan'),
+            'jumlah_ruangan'               => $this->request->getVar('jumlah_ruangan'),
+            'peruntukan_ruang'             => $this->request->getVar('peruntukan_ruang'),
+            'tahun_perolehan'              => $this->request->getVar('tahun_perolehan'),
+            'nilai_bangunan_pekerjaan'     => $this->request->getVar('nilai_bangunan_pekerjaan'),
+            'nilai_satuan_tanah'           => $this->request->getVar('nilai_satuan_tanah'),
+            'luas_halaman_taman'           => $this->request->getVar('luas_halaman_taman'),
             'nomor_kepemilikan_sertifikat' => $fileNomorKepemilikanSertifikatName,
-            'alamat' => $this->request->getVar('alamat'),
-            'batas_lahan' => $this->request->getVar('batas_lahan'),
-            'denah_gedung' => $fileDenahGedungName,
-            'nomor_imb' => $fileNomorImbName,
-            'jenis_kepemilikan' => $this->request->getVar('jenis_kepemilikan')
+            'alamat'                       => $this->request->getVar('alamat'),
+            'batas_lahan'                  => $this->request->getVar('batas_lahan'),
+            'denah_gedung'                 => $fileDenahGedungName,
+            'nomor_imb'                    => $fileNomorImbName,
+            'jenis_kepemilikan'            => $this->request->getVar('jenis_kepemilikan')
         ]);
 
         // lakukan flash data saat data ditambah

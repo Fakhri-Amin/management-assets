@@ -1,0 +1,30 @@
+CRITICAL - 2022-05-16 03:46:47 --> unlink(img/tanah_dan_bangunan/monitor3.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(img/tana...', 'C:\\xampp\\htdocs...', 319)
+#1 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(319): unlink('img/tanah_dan_b...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->delete('3')
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-16 03:47:37 --> unlink(document/tanah_dan_bangunan/073519): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(document...', 'C:\\xampp\\htdocs...', 325)
+#1 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(325): unlink('document/tanah_...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->delete('1')
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#4 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-16 04:17:44 --> Undefined variable $cats
+#0 C:\xampp\htdocs\management-assets\app\Views\tanah_dan_bangunan\edit.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 69)
+#1 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('tanah_dan_bangu...', Array, true)
+#4 C:\xampp\htdocs\management-assets\app\Controllers\Tanah_dan_bangunan.php(48): view('tanah_dan_bangu...', Array)
+#5 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Tanah_dan_bangunan->edit('1')
+#6 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tanah_dan_bangunan))
+#7 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\management-assets\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\management-assets\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

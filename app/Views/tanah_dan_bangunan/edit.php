@@ -60,90 +60,90 @@
                         </div>
                         <div class="mb-3">
                             <label for="kondisi_bangunan" class="form-label">Kondisi Bangunan</label>
-                            <select class="form-select" aria-label="Default select example" name="kondisi_bangunan" id="kondisi_bangunan" required>
+                            <select class="form-select" aria-label="Default select example" name="kondisi_bangunan" id="kondisi_bangunan">
                                 <option selected>-- Jenis Kerusakan --</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Baik'; ?>">Baik</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Ringan'; ?>">Rusak Ringan</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Berat'; ?>">Rusak Berat</option>
+                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Baik'; ?>" <?php if ($data['kondisi_bangunan'] == 'Baik') echo "selected" ?>>Baik</option>
+                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Ringan'; ?>" <?php if ($data['kondisi_bangunan'] == 'Rusak Ringan') echo "selected" ?>>Rusak Ringan</option>
+                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Berat'; ?>" <?php if ($data['kondisi_bangunan'] == 'Rusak Berat') echo "selected" ?>>Rusak Berat</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="luas_tanah" class="form-label">Luas Tanah</label>
-                            <input type="text" class="form-control" id="luas_tanah" name="luas_tanah" required value="<?= (old('luas_tanah')) ? old('luas_tanah') : $data['luas_tanah']; ?>">
+                            <input type="text" class="form-control" id="luas_tanah" name="luas_tanah" value="<?= (old('luas_tanah')) ? old('luas_tanah') : $data['luas_tanah']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="luas_bangunan" class="form-label">Luas Bangunan</label>
-                            <input type="text" class="form-control" id="luas_bangunan" name="luas_bangunan" required value="<?= (old('luas_bangunan')) ? old('luas_bangunan') : $data['luas_bangunan']; ?>">
+                            <input type="text" class="form-control" id="luas_bangunan" name="luas_bangunan" value="<?= (old('luas_bangunan')) ? old('luas_bangunan') : $data['luas_bangunan']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="jumlah_bangunan" class="form-label">Jumlah Bangunan</label>
-                            <input type="text" class="form-control" id="jumlah_bangunan" name="jumlah_bangunan" required value="<?= (old('jumlah_bangunan')) ? old('jumlah_bangunan') : $data['jumlah_bangunan']; ?>">
+                            <input type="text" class="form-control" id="jumlah_bangunan" name="jumlah_bangunan" value="<?= (old('jumlah_bangunan')) ? old('jumlah_bangunan') : $data['jumlah_bangunan']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="jumlah_ruangan" class="form-label">Jumlah Ruangan</label>
-                            <input type="text" class="form-control" id="jumlah_ruangan" name="jumlah_ruangan" required value="<?= (old('jumlah_ruangan')) ? old('jumlah_ruangan') : $data['jumlah_ruangan']; ?>">
+                            <input type="text" class="form-control" id="jumlah_ruangan" name="jumlah_ruangan" value="<?= (old('jumlah_ruangan')) ? old('jumlah_ruangan') : $data['jumlah_ruangan']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="peruntukan_ruang" class="form-label">Peruntukan Ruang</label>
-                            <input type="text" class="form-control" id="peruntukan_ruang" name="peruntukan_ruang" required value="<?= (old('peruntukan_ruang')) ? old('peruntukan_ruang') : $data['peruntukan_ruang']; ?>">
+                            <input type="text" class="form-control" id="peruntukan_ruang" name="peruntukan_ruang" value="<?= (old('peruntukan_ruang')) ? old('peruntukan_ruang') : $data['peruntukan_ruang']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="tahun_perolehan" class="form-label">Tahun Perolehan</label>
-                            <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" required value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : $data['tahun_perolehan']; ?>">
+                            <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : $data['tahun_perolehan']; ?>">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="mb-3">
                             <label for="nilai_bangunan_pekerjaan" class="form-label">Nilai Bangunan / Nilai Pekerjaan</label>
-                            <input type="text" class="form-control" id="nilai_bangunan_pekerjaan" name="nilai_bangunan_pekerjaan" required value="<?= (old('nilai_bangunan_pekerjaan')) ? old('nilai_bangunan_pekerjaan') : $data['nilai_bangunan_pekerjaan']; ?>">
+                            <input type="text" class="form-control" id="nilai_bangunan_pekerjaan" name="nilai_bangunan_pekerjaan" value="<?= (old('nilai_bangunan_pekerjaan')) ? old('nilai_bangunan_pekerjaan') : $data['nilai_bangunan_pekerjaan']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="nilai_satuan_tanah" class="form-label">Nilai Satuan / Nilai Tanah</label>
-                            <input type="text" class="form-control" id="nilai_satuan_tanah" name="nilai_satuan_tanah" required value="<?= (old('nilai_satuan_tanah')) ? old('nilai_satuan_tanah') : $data['nilai_satuan_tanah']; ?>">
+                            <input type="text" class="form-control" id="nilai_satuan_tanah" name="nilai_satuan_tanah" value="<?= (old('nilai_satuan_tanah')) ? old('nilai_satuan_tanah') : $data['nilai_satuan_tanah']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="luas_halaman_taman" class="form-label">Luas Halaman / Taman</label>
-                            <input type="text" class="form-control" id="luas_halaman_taman" name="luas_halaman_taman" required value="<?= (old('luas_halaman_taman')) ? old('luas_halaman_taman') : $data['luas_halaman_taman']; ?>">
+                            <input type="text" class="form-control" id="luas_halaman_taman" name="luas_halaman_taman" value="<?= (old('luas_halaman_taman')) ? old('luas_halaman_taman') : $data['luas_halaman_taman']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="nomor_kepemilikan_sertifikat" class="form-label">Nomor Kepemilikan / Sertifikat</label>
-                            <input type="file" class="form-control" id="nomor_kepemilikan_sertifikat" name="nomor_kepemilikan_sertifikat" required value="<?= (old('nomor_kepemilikan_sertifikat')) ? old('nomor_kepemilikan_sertifikat') : $data['nomor_kepemilikan_sertifikat']; ?>">
+                            <input type="file" class="form-control" id="nomor_kepemilikan_sertifikat" name="nomor_kepemilikan_sertifikat" value="<?= (old('nomor_kepemilikan_sertifikat')) ? old('nomor_kepemilikan_sertifikat') : $data['nomor_kepemilikan_sertifikat']; ?>">
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 <?= $validation->getError('nomor_kepemilikan_sertifikat'); ?>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" required value="<?= (old('alamat')) ? old('alamat') : $data['alamat']; ?>">
+                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?= (old('alamat')) ? old('alamat') : $data['alamat']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="batas_lahan" class="form-label">Batas Lahan</label>
-                            <!-- <input type="text" class="form-control" id="batas_lahan" name="batas_lahan" required value="<?= (old('batas_lahan')) ? old('batas_lahan') : ''; ?>"> -->
-                            <select class="form-select" aria-label="Default select example" name="batas_lahan" id="batas_lahan" required>
+                            <!-- <input type="text" class="form-control" id="batas_lahan" name="batas_lahan" value="<?= (old('batas_lahan')) ? old('batas_lahan') : ''; ?>"> -->
+                            <select class="form-select" aria-label="Default select example" name="batas_lahan" id="batas_lahan">
                                 <option selected>-- Batas Lahan --</option>
-                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Utara'; ?>">Utara</option>
-                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Selatan'; ?>">Selatan</option>
-                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Barat'; ?>">Barat</option>
-                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Timur'; ?>">Timur</option>
+                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Utara'; ?>" <?php if ($data['batas_lahan'] == 'Utara') echo "selected" ?>>Utara</option>
+                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Selatan'; ?>" <?php if ($data['batas_lahan'] == 'Selatan') echo "selected" ?>>Selatan</option>
+                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Barat'; ?>" <?php if ($data['batas_lahan'] == 'Barat') echo "selected" ?>>Barat</option>
+                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Timur'; ?>" <?php if ($data['batas_lahan'] == 'Timur') echo "selected" ?>>Timur</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="denah_gedung" class="form-label <?= ($validation->hasError('denah_gedung')) ? 'is-invalid' : '' ?>">Denah Gedung</label>
-                            <input type="file" class="form-control" id="denah_gedung" name="denah_gedung" required value="<?= (old('denah_gedung')) ? old('denah_gedung') : $data['denah_gedung']; ?>">
+                            <input type="file" class="form-control" id="denah_gedung" name="denah_gedung" value="<?= (old('denah_gedung')) ? old('denah_gedung') : $data['denah_gedung']; ?>">
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 <?= $validation->getError('denah_gedung'); ?>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="nomor_imb" class="form-label <?= ($validation->hasError('nomor_imb')) ? 'is-invalid' : '' ?>">Nomor IMB</label>
-                            <input type="file" class="form-control" id="nomor_imb" name="nomor_imb" required value="<?= (old('nomor_imb')) ? old('nomor_imb') : $data['nomor_imb']; ?>">
+                            <input type="file" class="form-control" id="nomor_imb" name="nomor_imb" value="<?= (old('nomor_imb')) ? old('nomor_imb') : $data['nomor_imb']; ?>">
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 <?= $validation->getError('nomor_imb'); ?>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="jenis_kepemilikan" class="form-label">Jenis Kepemilikan</label>
-                            <input type="text" class="form-control" id="jenis_kepemilikan" name="jenis_kepemilikan" required value="<?= (old('jenis_kepemilikan')) ? old('jenis_kepemilikan') : $data['jenis_kepemilikan']; ?>">
+                            <input type="text" class="form-control" id="jenis_kepemilikan" name="jenis_kepemilikan" value="<?= (old('jenis_kepemilikan')) ? old('jenis_kepemilikan') : $data['jenis_kepemilikan']; ?>">
                         </div>
                     </div>
                     <div class="mt-4 mb-0">

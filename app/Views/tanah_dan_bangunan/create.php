@@ -52,8 +52,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="kondisi_bangunan" class="form-label">Kondisi Bangunan</label>
-                            <!-- <input type="text" class="form-control" id="kondisi_bangunan" name="kondisi_bangunan" required value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : ''; ?>"> -->
-                            <select class="form-select" aria-label="Default select example" name="kondisi_bangunan" id="kondisi_bangunan" required>
+                            <!-- <input type="text" class="form-control" id="kondisi_bangunan" name="kondisi_bangunan" value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : ''; ?>"> -->
+                            <select class="form-select" aria-label="Default select example" name="kondisi_bangunan" id="kondisi_bangunan">
                                 <option selected>-- Jenis Kerusakan --</option>
                                 <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Baik'; ?>">Baik</option>
                                 <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Ringan'; ?>">Rusak Ringan</option>
@@ -61,58 +61,58 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="luas_tanah" class="form-label">Luas Tanah</label>
-                            <input type="text" class="form-control" id="luas_tanah" name="luas_tanah" required value="<?= (old('luas_tanah')) ? old('luas_tanah') : ''; ?>">
+                            <label for="luas_tanah" class="form-label">Luas Tanah (km<sup>2</sup>)</label>
+                            <input type="number" class="form-control" id="luas_tanah" name="luas_tanah" value="<?= (old('luas_tanah')) ? old('luas_tanah') : ''; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="luas_bangunan" class="form-label">Luas Bangunan</label>
-                            <input type="text" class="form-control" id="luas_bangunan" name="luas_bangunan" required value="<?= (old('luas_bangunan')) ? old('luas_bangunan') : ''; ?>">
+                            <input type="number" class="form-control" id="luas_bangunan" name="luas_bangunan" value="<?= (old('luas_bangunan')) ? old('luas_bangunan') : ''; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="jumlah_bangunan" class="form-label">Jumlah Bangunan</label>
-                            <input type="text" class="form-control" id="jumlah_bangunan" name="jumlah_bangunan" required value="<?= (old('jumlah_bangunan')) ? old('jumlah_bangunan') : ''; ?>">
+                            <input type="number" class="form-control" id="jumlah_bangunan" name="jumlah_bangunan" value="<?= (old('jumlah_bangunan')) ? old('jumlah_bangunan') : ''; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="jumlah_ruangan" class="form-label">Jumlah Ruangan</label>
-                            <input type="text" class="form-control" id="jumlah_ruangan" name="jumlah_ruangan" required value="<?= (old('jumlah_ruangan')) ? old('jumlah_ruangan') : ''; ?>">
+                            <input type="number" class="form-control" id="jumlah_ruangan" name="jumlah_ruangan" value="<?= (old('jumlah_ruangan')) ? old('jumlah_ruangan') : ''; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="peruntukan_ruang" class="form-label">Peruntukan Ruang</label>
-                            <input type="text" class="form-control" id="peruntukan_ruang" name="peruntukan_ruang" required value="<?= (old('peruntukan_ruang')) ? old('peruntukan_ruang') : ''; ?>">
+                            <input type="text" class="form-control" id="peruntukan_ruang" name="peruntukan_ruang" value="<?= (old('peruntukan_ruang')) ? old('peruntukan_ruang') : ''; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="tahun_perolehan" class="form-label">Tahun Perolehan</label>
-                            <input type="text" class="form-control" id="tahun_perolehan" name="tahun_perolehan" required value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : ''; ?>">
+                            <input type="number" class="form-control" id="tahun_perolehan" name="tahun_perolehan" value="<?= (old('tahun_perolehan')) ? old('tahun_perolehan') : ''; ?>">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="mb-3">
                             <label for="nilai_bangunan_pekerjaan" class="form-label">Nilai Bangunan / Nilai Pekerjaan</label>
-                            <input type="text" class="form-control" id="nilai_bangunan_pekerjaan" name="nilai_bangunan_pekerjaan" required value="<?= (old('nilai_bangunan_pekerjaan')) ? old('nilai_bangunan_pekerjaan') : ''; ?>">
+                            <input type="number" class="form-control" id="nilai_bangunan_pekerjaan" name="nilai_bangunan_pekerjaan" value="<?= (old('nilai_bangunan_pekerjaan')) ? old('nilai_bangunan_pekerjaan') : ''; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="batas_lahan_tanah" class="form-label">Nilai Satuan / Nilai Tanah</label>
-                            <input type="text" class="form-control" id="batas_lahan_tanah" name="batas_lahan_tanah" required value="<?= (old('batas_lahan_tanah')) ? old('batas_lahan_tanah') : ''; ?>">
+                            <label for="nilai_satuan_tanah" class="form-label">Nilai Satuan / Nilai Tanah</label>
+                            <input type="number" class="form-control" id="nilai_satuan_tanah" name="nilai_satuan_tanah" value="<?= (old('nilai_satuan_tanah')) ? old('nilai_satuan_tanah') : ''; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="luas_halaman_taman" class="form-label">Luas Halaman / Taman</label>
-                            <input type="text" class="form-control" id="luas_halaman_taman" name="luas_halaman_taman" required value="<?= (old('luas_halaman_taman')) ? old('luas_halaman_taman') : ''; ?>">
+                            <input type="number" class="form-control" id="luas_halaman_taman" name="luas_halaman_taman" value="<?= (old('luas_halaman_taman')) ? old('luas_halaman_taman') : ''; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="nomor_kepemilikan_sertifikat" class="form-label <?= ($validation->hasError('nomor_kepemilikan_sertifikat')) ? 'is-invalid' : '' ?>">Nomor Kepemilikan / Sertifikat</label>
-                            <input type="file" class="form-control" id="nomor_kepemilikan_sertifikat" name="nomor_kepemilikan_sertifikat" required value="<?= (old('nomor_kepemilikan_sertifikat')) ? old('nomor_kepemilikan_sertifikat') : ''; ?>">
+                            <input type="file" class="form-control" id="nomor_kepemilikan_sertifikat" name="nomor_kepemilikan_sertifikat" value="<?= (old('nomor_kepemilikan_sertifikat')) ? old('nomor_kepemilikan_sertifikat') : ''; ?>">
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 <?= $validation->getError('nomor_kepemilikan_sertifikat'); ?>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" required value="<?= (old('alamat')) ? old('alamat') : ''; ?>">
+                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?= (old('alamat')) ? old('alamat') : ''; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="batas_lahan" class="form-label">Batas Lahan</label>
-                            <!-- <input type="text" class="form-control" id="batas_lahan" name="batas_lahan" required value="<?= (old('batas_lahan')) ? old('batas_lahan') : ''; ?>"> -->
-                            <select class="form-select" aria-label="Default select example" name="batas_lahan" id="batas_lahan" required>
+                            <!-- <input type="text" class="form-control" id="batas_lahan" name="batas_lahan" value="<?= (old('batas_lahan')) ? old('batas_lahan') : ''; ?>"> -->
+                            <select class="form-select" aria-label="Default select example" name="batas_lahan" id="batas_lahan">
                                 <option selected>-- Batas Lahan --</option>
                                 <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Utara'; ?>">Utara</option>
                                 <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Selatan'; ?>">Selatan</option>
@@ -122,21 +122,21 @@
                         </div>
                         <div class="mb-3">
                             <label for="denah_gedung" class="form-label <?= ($validation->hasError('denah_gedung')) ? 'is-invalid' : '' ?>">Denah Gedung</label>
-                            <input type="file" class="form-control" id="denah_gedung" name="denah_gedung" required value="<?= (old('denah_gedung')) ? old('denah_gedung') : ''; ?>">
+                            <input type="file" class="form-control" id="denah_gedung" name="denah_gedung" value="<?= (old('denah_gedung')) ? old('denah_gedung') : ''; ?>">
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 <?= $validation->getError('denah_gedung'); ?>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="nomor_imb" class="form-label <?= ($validation->hasError('nomor_imb')) ? 'is-invalid' : '' ?>">Nomor IMB</label>
-                            <input type="file" class="form-control" id="nomor_imb" name="nomor_imb" required value="<?= (old('nomor_imb')) ? old('nomor_imb') : ''; ?>">
+                            <input type="file" class="form-control" id="nomor_imb" name="nomor_imb" value="<?= (old('nomor_imb')) ? old('nomor_imb') : ''; ?>">
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 <?= $validation->getError('nomor_imb'); ?>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="jenis_kepemilikan" class="form-label">Jenis Kepemilikan</label>
-                            <input type="text" class="form-control" id="jenis_kepemilikan" name="jenis_kepemilikan" required value="<?= (old('jenis_kepemilikan')) ? old('jenis_kepemilikan') : ''; ?>">
+                            <input type="text" class="form-control" id="jenis_kepemilikan" name="jenis_kepemilikan" value="<?= (old('jenis_kepemilikan')) ? old('jenis_kepemilikan') : ''; ?>">
                         </div>
                     </div>
                     <div class="mt-4 mb-0">

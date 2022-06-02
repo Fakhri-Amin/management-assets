@@ -25,13 +25,23 @@
                         <a class="nav-link" href="/meubellair">Meubellair</a>
                         <a class="nav-link" href="/aset_lainnya">Aset Lainnya</a>
                         <a class="nav-link" href="/laporan_yang_dibutuhkan">Laporan Yang Dibutuhkan</a>
-                        <a class="nav-link" href="/logout">Logout</a>
+                        <!-- <a class="nav-link" href="/logout">Logout</a> -->
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
                     Pages
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    <div class="sb-sidenav-collapse-arrow">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </a>
+                <a class="nav-link" href="/logout">
+                    <div class="sb-nav-link-icon">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </div>
+                    Logout
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">

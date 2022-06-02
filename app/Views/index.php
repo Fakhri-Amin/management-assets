@@ -9,7 +9,7 @@
         <li class="breadcrumb-item active">Halaman Utama</li>
     </ol>
 
-    <h2 class="text-center mb-0"><span class="fw-normal">Selamat Datang,</span> <?= session()->get('name'); ?></h2>
+    <h2 class="text-center mb-0"><span class="fw-normal">Selamat Datang</span> <?= session()->get('name'); ?></h2>
     <p class="fs-3 fw-light text-center mb-4 mt-0">Silahkan Pilih Menu Yang Tersedia</p>
 
     <div class="row justify-content-center">
