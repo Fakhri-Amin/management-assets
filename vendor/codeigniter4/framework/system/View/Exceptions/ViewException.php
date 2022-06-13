@@ -44,9 +44,4 @@ class ViewException extends FrameworkException
     {
         return new static(lang('View.tagSyntaxError', [$output]));
     }
-
-    public static function forInvalidDecorator(string $className)
-    {
-        return new static(lang('View.invalidDecoratorClass', [$className]));
-    }
 }

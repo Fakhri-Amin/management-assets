@@ -41,27 +41,29 @@ class Publisher extends FileCollection
      *
      * @var array<string, self[]|null>
      */
-    private static array $discovered = [];
+    private static $discovered = [];
 
     /**
      * Directory to use for methods that need temporary storage.
      * Created on-the-fly as needed.
+     *
+     * @var string|null
      */
-    private ?string $scratch = null;
+    private $scratch;
 
     /**
      * Exceptions for specific files from the last write operation.
      *
      * @var array<string, Throwable>
      */
-    private array $errors = [];
+    private $errors = [];
 
     /**
      * List of file published curing the last write operation.
      *
      * @var string[]
      */
-    private array $published = [];
+    private $published = [];
 
     /**
      * List of allowed directories and their allowed files regex.
@@ -69,7 +71,7 @@ class Publisher extends FileCollection
      *
      * @var array<string,string>
      */
-    private array $restrictions;
+    private $restrictions;
 
     /**
      * Base path to use for the source.
@@ -111,9 +113,9 @@ class Publisher extends FileCollection
 
         // Loop over each file checking to see if it is a Publisher
         foreach (array_unique($files) as $file) {
-            $className = $locator->getClassname($file);
+            $className = $locator->findQualifiedNameFromPath($file);
 
-            if ($className !== '' && class_exists($className) && is_a($className, self::class, true)) {
+            if (is_string($className) && class_exists($className) && is_a($className, self::class, true)) {
                 self::$discovered[$directory][] = new $className();
             }
         }

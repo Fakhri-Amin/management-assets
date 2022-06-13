@@ -31,7 +31,7 @@
                     <tr>
                         <th>No</th>
                         <th>Foto Barang</th>
-                        <th>Kondisi Bangunan</th>
+                        <th>Kondisi</th>
                         <th>Luas Tanah</th>
                         <th>Luas Bangunan</th>
                         <th>Jumlah Bangunan</th>
@@ -47,7 +47,9 @@
                         <th>Denah Gedung</th>
                         <th>Nomor IMB</th>
                         <th>Jenis Kepemilikan</th>
-                        <th>Aksi</th>
+                        <?php if (in_groups(['admin-master', 'admin-bmn-unkhair', 'admin-bmn-fakultas'])) : ?>
+                            <th>Aksi</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,7 +60,7 @@
                             <td>
                                 <img src="/img/tanah_dan_bangunan/<?= $data['foto_barang'] ?>" alt="<?= $data['foto_barang'] ?>" title="<?= $data['foto_barang'] ?>" width="100">
                             </td>
-                            <td><?= $data['kondisi_bangunan']; ?></td>
+                            <td><?= $data['kondisi']; ?></td>
                             <td><?= $data['luas_tanah']; ?></td>
                             <td><?= $data['luas_bangunan']; ?></td>
                             <td><?= $data['jumlah_bangunan']; ?></td>
@@ -74,18 +76,20 @@
                             <td><?= $data['denah_gedung']; ?></td>
                             <td><?= $data['nomor_imb']; ?></td>
                             <td><?= $data['jenis_kepemilikan']; ?></td>
-                            <td>
-                                <a class="btn btn-success btn-sm" href="/tanah_dan_bangunan/edit/<?= $data['id']; ?>">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </a>
-                                <form action="/tanah_dan_bangunan/<?= $data['id']; ?>" method="POST" class="d-inline">
-                                    <?= csrf_field(); ?>
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </button>
-                                </form>
-                            </td>
+                            <?php if (in_groups(['admin-master', 'admin-bmn-unkhair', 'admin-bmn-fakultas'])) : ?>
+                                <td>
+                                    <a class="btn btn-success btn-sm" href="/tanah_dan_bangunan/edit/<?= $data['id']; ?>">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
+                                    <form action="/tanah_dan_bangunan/<?= $data['id']; ?>" method="POST" class="d-inline">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

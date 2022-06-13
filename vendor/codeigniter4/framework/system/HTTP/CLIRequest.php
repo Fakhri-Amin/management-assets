@@ -42,13 +42,6 @@ class CLIRequest extends Request
     protected $options = [];
 
     /**
-     * Command line arguments (segments and options).
-     *
-     * @var array
-     */
-    protected $args = [];
-
-    /**
      * Set the expected HTTP verb
      *
      * @var string
@@ -99,14 +92,6 @@ class CLIRequest extends Request
     public function getOptions(): array
     {
         return $this->options;
-    }
-
-    /**
-     * Returns an array of all CLI arguments (segments and options).
-     */
-    public function getArgs(): array
-    {
-        return $this->args;
     }
 
     /**
@@ -188,7 +173,6 @@ class CLIRequest extends Request
                     $optionValue = false;
                 } else {
                     $this->segments[] = $arg;
-                    $this->args[]     = $arg;
                 }
 
                 continue;
@@ -203,7 +187,6 @@ class CLIRequest extends Request
             }
 
             $this->options[$arg] = $value;
-            $this->args[$arg]    = $value;
         }
     }
 
@@ -212,6 +195,6 @@ class CLIRequest extends Request
      */
     public function isCLI(): bool
     {
-        return true;
+        return is_cli();
     }
 }

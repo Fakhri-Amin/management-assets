@@ -12,7 +12,6 @@
 namespace CodeIgniter\Security;
 
 use CodeIgniter\Cookie\Cookie;
-use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\Response;
 use CodeIgniter\Security\Exceptions\SecurityException;
@@ -136,21 +135,28 @@ class Security implements SecurityInterface
      *
      * @var string
      *
-     * @deprecated `Config\Cookie` $samesite property is used.
+     * @deprecated
      */
     protected $samesite = Cookie::SAMESITE_LAX;
 
-    private IncomingRequest $request;
+    /**
+     * @var RequestInterface
+     */
+    private $request;
 
     /**
      * CSRF Cookie Name without Prefix
+     *
+     * @var string
      */
-    private ?string $rawCookieName = null;
+    private $rawCookieName;
 
     /**
      * Session instance.
+     *
+     * @var Session
      */
-    private ?Session $session = null;
+    private $session;
 
     /**
      * Constructor.
@@ -169,7 +175,6 @@ class Security implements SecurityInterface
             $this->tokenName      = $security->tokenName ?? $this->tokenName;
             $this->headerName     = $security->headerName ?? $this->headerName;
             $this->regenerate     = $security->regenerate ?? $this->regenerate;
-            $this->redirect       = $security->redirect ?? $this->redirect;
             $this->rawCookieName  = $security->cookieName ?? $this->rawCookieName;
             $this->expires        = $security->expires ?? $this->expires;
             $this->tokenRandomize = $security->tokenRandomize ?? $this->tokenRandomize;
@@ -180,7 +185,6 @@ class Security implements SecurityInterface
             $this->regenerate    = $config->CSRFRegenerate ?? $this->regenerate;
             $this->rawCookieName = $config->CSRFCookieName ?? $this->rawCookieName;
             $this->expires       = $config->CSRFExpire ?? $this->expires;
-            $this->redirect      = $config->CSRFRedirect ?? $this->redirect;
         }
 
         if ($this->isCSRFCookie()) {
@@ -277,9 +281,8 @@ class Security implements SecurityInterface
             return $this;
         }
 
-        $postedToken = $this->getPostedToken($request);
-        $token       = ($postedToken !== null && $this->tokenRandomize)
-            ? $this->derandomize($postedToken) : $postedToken;
+        $token = $this->tokenRandomize ? $this->derandomize($this->getPostedToken($request))
+            : $this->getPostedToken($request);
 
         // Do the tokens match?
         if (! isset($token, $this->hash) || ! hash_equals($this->hash, $token)) {

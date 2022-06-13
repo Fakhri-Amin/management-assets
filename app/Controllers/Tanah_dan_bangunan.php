@@ -179,7 +179,7 @@ class Tanah_dan_bangunan extends BaseController
         $this->tanah_dan_bangunan->save([
             'id' => $id,
             'foto_barang'     => $filePhotoName,
-            'kondisi_bangunan'  => $this->request->getVar('kondisi_bangunan'),
+            'kondisi'  => $this->request->getVar('kondisi'),
             'luas_tanah'      => $this->request->getVar('luas_tanah'),
             'luas_bangunan'      => $this->request->getVar('luas_bangunan'),
             'jumlah_bangunan'  => $this->request->getVar('jumlah_bangunan'),
@@ -285,7 +285,7 @@ class Tanah_dan_bangunan extends BaseController
         // $slug = url_title($this->request->getVar('name'), '-', true);
         $this->tanah_dan_bangunan->save([
             'foto_barang'                  => $filePhotoName,
-            'kondisi_bangunan'             => $this->request->getVar('kondisi_bangunan'),
+            'kondisi'             => $this->request->getVar('kondisi'),
             'luas_tanah'                   => $this->request->getVar('luas_tanah'),
             'luas_bangunan'                => $this->request->getVar('luas_bangunan'),
             'jumlah_bangunan'              => $this->request->getVar('jumlah_bangunan'),

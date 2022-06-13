@@ -11,19 +11,14 @@
 
 namespace CodeIgniter\Commands\Utilities;
 
-use Closure;
 use CodeIgniter\CLI\BaseCommand;
 use CodeIgniter\CLI\CLI;
-use CodeIgniter\Commands\Utilities\Routes\AutoRouteCollector;
-use CodeIgniter\Commands\Utilities\Routes\AutoRouterImproved\AutoRouteCollector as AutoRouteCollectorImproved;
-use CodeIgniter\Commands\Utilities\Routes\FilterCollector;
-use CodeIgniter\Commands\Utilities\Routes\SampleURIGenerator;
 use Config\Services;
 
 /**
- * Lists all the routes. This will include any Routes files
- * that can be discovered, and will include routes that are not defined
- * in routes files, but are instead discovered through auto-routing.
+ * Lists all of the user-defined routes. This will include any Routes files
+ * that can be discovered, but will NOT include any routes that are not defined
+ * in a routes file, but are instead discovered through auto-routing.
  */
 class Routes extends BaseCommand
 {
@@ -47,7 +42,7 @@ class Routes extends BaseCommand
      *
      * @var string
      */
-    protected $description = 'Displays all routes.';
+    protected $description = 'Displays all of user-defined routes. Does NOT display auto-detected routes.';
 
     /**
      * the Command's usage
@@ -89,69 +84,27 @@ class Routes extends BaseCommand
             'cli',
         ];
 
-        $tbody           = [];
-        $uriGenerator    = new SampleURIGenerator();
-        $filterCollector = new FilterCollector();
+        $tbody = [];
 
         foreach ($methods as $method) {
             $routes = $collection->getRoutes($method);
 
             foreach ($routes as $route => $handler) {
-                if (is_string($handler) || $handler instanceof Closure) {
-                    $sampleUri = $uriGenerator->get($route);
-                    $filters   = $filterCollector->get($method, $sampleUri);
-
+                // filter for strings, as callbacks aren't displayable
+                if (is_string($handler)) {
                     $tbody[] = [
                         strtoupper($method),
                         $route,
-                        is_string($handler) ? $handler : '(Closure)',
-                        implode(' ', array_map('class_basename', $filters['before'])),
-                        implode(' ', array_map('class_basename', $filters['after'])),
+                        $handler,
                     ];
                 }
             }
-        }
-
-        if ($collection->shouldAutoRoute()) {
-            $autoRoutesImproved = config('Feature')->autoRoutesImproved ?? false;
-
-            if ($autoRoutesImproved) {
-                $autoRouteCollector = new AutoRouteCollectorImproved(
-                    $collection->getDefaultNamespace(),
-                    $collection->getDefaultController(),
-                    $collection->getDefaultMethod(),
-                    $methods,
-                    $collection->getRegisteredControllers('*')
-                );
-
-                $autoRoutes = $autoRouteCollector->get();
-            } else {
-                $autoRouteCollector = new AutoRouteCollector(
-                    $collection->getDefaultNamespace(),
-                    $collection->getDefaultController(),
-                    $collection->getDefaultMethod()
-                );
-
-                $autoRoutes = $autoRouteCollector->get();
-
-                foreach ($autoRoutes as &$routes) {
-                    // There is no `auto` method, but it is intentional not to get route filters.
-                    $filters = $filterCollector->get('auto', $uriGenerator->get($routes[1]));
-
-                    $routes[] = implode(' ', array_map('class_basename', $filters['before']));
-                    $routes[] = implode(' ', array_map('class_basename', $filters['after']));
-                }
-            }
-
-            $tbody = [...$tbody, ...$autoRoutes];
         }
 
         $thead = [
             'Method',
             'Route',
             'Handler',
-            'Before Filters',
-            'After Filters',
         ];
 
         CLI::table($tbody, $thead);

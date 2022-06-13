@@ -81,7 +81,7 @@ abstract class BaseHandler implements SessionHandlerInterface
     /**
      * Current session ID
      *
-     * @var string|null
+     * @var string
      */
     protected $sessionID;
 

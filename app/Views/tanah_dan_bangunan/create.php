@@ -51,13 +51,13 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="kondisi_bangunan" class="form-label">Kondisi Bangunan</label>
-                            <!-- <input type="text" class="form-control" id="kondisi_bangunan" name="kondisi_bangunan" value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : ''; ?>"> -->
-                            <select class="form-select" aria-label="Default select example" name="kondisi_bangunan" id="kondisi_bangunan">
+                            <label for="kondisi" class="form-label">Kondisi</label>
+                            <!-- <input type="text" class="form-control" id="kondisi" name="kondisi" value="<?= (old('kondisi')) ? old('kondisi') : ''; ?>"> -->
+                            <select class="form-select" aria-label="Default select example" name="kondisi" id="kondisi">
                                 <option selected>-- Jenis Kerusakan --</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Baik'; ?>">Baik</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Ringan'; ?>">Rusak Ringan</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Berat'; ?>">Rusak Berat</option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Baik'; ?>">Baik</option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Rusak Ringan'; ?>">Rusak Ringan</option>
+                                <option value="<?= (old('kondisi')) ? old('kondisi') : 'Rusak Berat'; ?>">Rusak Berat</option>
                             </select>
                         </div>
                         <div class="mb-3">

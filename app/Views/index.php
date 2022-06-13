@@ -9,28 +9,10 @@
         <li class="breadcrumb-item active">Halaman Utama</li>
     </ol>
 
-    <h2 class="text-center mb-0"><span class="fw-normal">Selamat Datang</span> <?= session()->get('name'); ?></h2>
+    <h2 class="text-center mb-0"><span class="fw-normal">Selamat Datang</span> <?= User()->username; ?>!</h2>
     <p class="fs-3 fw-light text-center mb-4 mt-0">Silahkan Pilih Menu Yang Tersedia</p>
 
     <div class="row justify-content-center">
-        <!-- <div class="col-xl-3 col-md-6">
-            <div class="card bg-primary text-white mb-4">
-                <div class="card-body">Primary Card</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-            <div class="card bg-warning text-white mb-4">
-                <div class="card-body">Warning Card</div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-            </div>
-        </div> -->
         <div class="col-xl-3 col-md-6">
             <div class="card bg-info text-white mb-4">
                 <div class="card-body">
@@ -80,18 +62,6 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-primary text-white mb-4">
-                <div class="card-body">
-                    <span class="fs-5">
-                        <i class="bi bi-box"></i> Admin BMN</span>
-                </div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="/admin_bmn">View Details</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body">
                     <span class="fs-5"><i class="bi bi-display"></i> Laboratorium</span>
@@ -124,17 +94,56 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6">
-            <div class="card bg-dark text-white mb-4">
-                <div class="card-body">
-                    <span class="fs-5"><i class="bi bi-display"></i> Laporan Yang Dibutuhkan</span>
-                </div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="/laporan_yang_dibutuhkan">View Details</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+        <?php if (in_groups(['admin-master', 'admin-bmn-unkhair'])) : ?>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">
+                        <span class="fs-5">
+                            <i class="bi bi-box"></i> Admin BMN</span>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="/admin_bmn">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">
+                        <span class="fs-5"><i class="bi bi-display"></i> Laporan Yang Dibutuhkan</span>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="/laporan_yang_dibutuhkan">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-light text-black mb-4">
+                    <div class="card-body">
+                        <span class="fs-5"><i class="fa fa-users"></i> User List</span>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-black stretched-link" href="/user_list">View Details</a>
+                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-dark text-white mb-4">
+                    <div class="card-body">
+                        <span class="fs-5"><i class="fa fa-users"></i> User Type</span>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="/user_type">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
 
     </div>
 </div>

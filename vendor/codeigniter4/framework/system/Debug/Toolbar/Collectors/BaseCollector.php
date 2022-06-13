@@ -11,6 +11,8 @@
 
 namespace CodeIgniter\Debug\Toolbar\Collectors;
 
+use CodeIgniter\Debug\Exceptions;
+
 /**
  * Base Toolbar collector
  */
@@ -172,13 +174,13 @@ class BaseCollector
     }
 
     /**
-     * This makes nicer looking paths for the error output.
+     * Clean Path
      *
-     * @deprecated Use the dedicated `clean_path()` function.
+     * This makes nicer looking paths for the error output.
      */
     public function cleanPath(string $file): string
     {
-        return clean_path($file);
+        return Exceptions::cleanPath($file);
     }
 
     /**

@@ -11,7 +11,7 @@
 
 namespace CodeIgniter\Test\Mock;
 
-use Config\Security;
+use Config\Security as Security;
 
 /**
  * @deprecated

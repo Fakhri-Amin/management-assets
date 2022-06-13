@@ -11,7 +11,6 @@
 
 namespace CodeIgniter\Filters;
 
-use CodeIgniter\HTTP\RedirectResponse;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Security\Exceptions\SecurityException;
@@ -40,7 +39,7 @@ class CSRF implements FilterInterface
      *
      * @throws SecurityException
      *
-     * @return RedirectResponse|void
+     * @return mixed|void
      */
     public function before(RequestInterface $request, $arguments = null)
     {
@@ -66,7 +65,7 @@ class CSRF implements FilterInterface
      *
      * @param array|null $arguments
      *
-     * @return void
+     * @return mixed|void
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {

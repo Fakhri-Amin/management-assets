@@ -1,1 +1,0 @@
-__ci_last_regenerate|i:1651119709;_ci_previous_url|s:37:"http://localhost:8080/index.php/login";error|s:25:"Username & Password Salah";__ci_vars|a:2:{s:5:"error";s:3:"old";s:13:"_ci_old_input";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:2:{s:8:"username";s:4:"9090";s:8:"password";s:4:"8989";}}

@@ -177,41 +177,6 @@ class ContentSecurityPolicy
     protected $nonces = [];
 
     /**
-     * Nonce for style
-     *
-     * @var string
-     */
-    protected $styleNonce;
-
-    /**
-     * Nonce for script
-     *
-     * @var string
-     */
-    protected $scriptNonce;
-
-    /**
-     * Nonce tag for style
-     *
-     * @var string
-     */
-    protected $styleNonceTag = '{csp-style-nonce}';
-
-    /**
-     * Nonce tag for script
-     *
-     * @var string
-     */
-    protected $scriptNonceTag = '{csp-script-nonce}';
-
-    /**
-     * Replace nonce tag automatically
-     *
-     * @var bool
-     */
-    protected $autoNonce = true;
-
-    /**
      * An array of header info since we have
      * to build ourself before passing to Response.
      *
@@ -228,69 +193,17 @@ class ContentSecurityPolicy
     protected $reportOnlyHeaders = [];
 
     /**
-     * Whether Content Security Policy is being enforced.
-     *
-     * @var bool
-     */
-    protected $CSPEnabled = false;
-
-    /**
      * Constructor.
      *
      * Stores our default values from the Config file.
      */
     public function __construct(ContentSecurityPolicyConfig $config)
     {
-        $appConfig        = config('App');
-        $this->CSPEnabled = $appConfig->CSPEnabled;
-
         foreach (get_object_vars($config) as $setting => $value) {
             if (property_exists($this, $setting)) {
                 $this->{$setting} = $value;
             }
         }
-
-        if (! is_array($this->styleSrc)) {
-            $this->styleSrc = [$this->styleSrc];
-        }
-
-        if (! is_array($this->scriptSrc)) {
-            $this->scriptSrc = [$this->scriptSrc];
-        }
-    }
-
-    /**
-     * Whether Content Security Policy is being enforced.
-     */
-    public function enabled(): bool
-    {
-        return $this->CSPEnabled;
-    }
-
-    /**
-     * Get the nonce for the style tag.
-     */
-    public function getStyleNonce(): string
-    {
-        if ($this->styleNonce === null) {
-            $this->styleNonce = bin2hex(random_bytes(12));
-            $this->styleSrc[] = 'nonce-' . $this->styleNonce;
-        }
-
-        return $this->styleNonce;
-    }
-
-    /**
-     * Get the nonce for the script tag.
-     */
-    public function getScriptNonce(): string
-    {
-        if ($this->scriptNonce === null) {
-            $this->scriptNonce = bin2hex(random_bytes(12));
-            $this->scriptSrc[] = 'nonce-' . $this->scriptNonce;
-        }
-
-        return $this->scriptNonce;
     }
 
     /**
@@ -298,12 +211,8 @@ class ContentSecurityPolicy
      *
      * Should be called just prior to sending the response to the user agent.
      */
-    public function finalize(ResponseInterface $response)
+    public function finalize(ResponseInterface &$response)
     {
-        if ($this->autoNonce === false) {
-            return;
-        }
-
         $this->generateNonces($response);
         $this->buildHeaders($response);
     }
@@ -663,7 +572,7 @@ class ContentSecurityPolicy
      * placeholders with actual nonces, that we'll then add to our
      * headers.
      */
-    protected function generateNonces(ResponseInterface $response)
+    protected function generateNonces(ResponseInterface &$response)
     {
         $body = $response->getBody();
 
@@ -671,12 +580,28 @@ class ContentSecurityPolicy
             return;
         }
 
-        // Replace style and script placeholders with nonces
-        $pattern = '/(' . preg_quote($this->styleNonceTag, '/')
-            . '|' . preg_quote($this->scriptNonceTag, '/') . ')/';
+        if (! is_array($this->styleSrc)) {
+            $this->styleSrc = [$this->styleSrc];
+        }
 
-        $body = preg_replace_callback($pattern, function ($match) {
-            $nonce = $match[0] === $this->styleNonceTag ? $this->getStyleNonce() : $this->getScriptNonce();
+        if (! is_array($this->scriptSrc)) {
+            $this->scriptSrc = [$this->scriptSrc];
+        }
+
+        // Replace style placeholders with nonces
+        $body = preg_replace_callback('/{csp-style-nonce}/', function () {
+            $nonce = bin2hex(random_bytes(12));
+
+            $this->styleSrc[] = 'nonce-' . $nonce;
+
+            return "nonce=\"{$nonce}\"";
+        }, $body);
+
+        // Replace script placeholders with nonces
+        $body = preg_replace_callback('/{csp-script-nonce}/', function () {
+            $nonce = bin2hex(random_bytes(12));
+
+            $this->scriptSrc[] = 'nonce-' . $nonce;
 
             return "nonce=\"{$nonce}\"";
         }, $body);
@@ -689,7 +614,7 @@ class ContentSecurityPolicy
      * Content-Security-Policy and Content-Security-Policy-Report-Only headers
      * with their values to the response object.
      */
-    protected function buildHeaders(ResponseInterface $response)
+    protected function buildHeaders(ResponseInterface &$response)
     {
         /**
          * Ensure both headers are available and arrays...

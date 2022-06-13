@@ -11,7 +11,7 @@ class ModelTanahDanBangunan extends Model
     protected $useTimesStamps = true; // Jika menggunakan created_at dan updated_at
     protected $allowedFields = [
         'foto_barang',
-        'kondisi_bangunan',
+        'kondisi',
         'luas_tanah',
         'luas_bangunan',
         'jumlah_bangunan',

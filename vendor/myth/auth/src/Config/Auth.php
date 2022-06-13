@@ -16,7 +16,7 @@ class Auth extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $defaultUserGroup;
+	public $defaultUserGroup = 'user';
 
 	/**
 	 * --------------------------------------------------------------------
@@ -150,8 +150,8 @@ class Auth extends BaseConfig
 	 *
 	 * @var string|null Name of the ActivatorInterface class
 	 */
-	public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';   // menggunakan autentikasi email
-	// public $requireActivation = false;  // tidak menggunakan autentikasi email
+	// public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';   // menggunakan autentikasi email
+	public $requireActivation = null;  // tidak menggunakan autentikasi email
 
 	/**
 	 * --------------------------------------------------------------------
@@ -163,8 +163,8 @@ class Auth extends BaseConfig
 	 *
 	 * @var string|null Name of the ResetterInterface class
 	 */
-	public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';  // menggunakan autentikasi
-	// public $activeResetter = false;   // tidak menggunakan autentikasi
+	// public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';  // menggunakan autentikasi
+	public $activeResetter = false;   // tidak menggunakan autentikasi
 
 	/**
 	 * --------------------------------------------------------------------
@@ -179,7 +179,7 @@ class Auth extends BaseConfig
 	 *
 	 * @var bool
 	 */
-	public $allowRemembering = false;
+	public $allowRemembering = true;
 
 	/**
 	 * --------------------------------------------------------------------

@@ -78,7 +78,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="condition" class="form-label">Kondisi</label>
-                            <input class="form-control" id="condition" name="condition" type="text" value="<?= (old('condition')) ? old('condition') : $data['condition'] ?>" required autofocus />
+                            <select class="form-select" aria-label="Default select example" name="condition" id="condition" required>
+                                <option <?= ($data['condition'] == 'Baik') ? 'selected' : ''; ?> value="Baik">Baik</option>
+                                <option <?= ($data['condition'] == 'Rusak Ringan') ? 'selected' : ''; ?> value="Rusak Ringan">Rusak Ringan</option>
+                                <option <?= ($data['condition'] == 'Rusak Berat') ? 'selected' : ''; ?> value="Rusak Berat">Rusak Berat</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="total" class="form-label">Total</label>

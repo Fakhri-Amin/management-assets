@@ -8,7 +8,7 @@
         <ul class="navbar-nav mx-auto mr-auto">
             <li class="nav-item h4 active">
                 <!-- <a class="nav-link" href="#"><?= lang('Auth.home') ?> <span class="sr-only">(<?= lang('Auth.current') ?>)</span></a> -->
-                <a class="nav-link" href="#">MANAGEMENT ASSET UNIVERSITAS KHAIRUN</a>
+                <a class="nav-link" href="#">MANAGEMENT ASSETS UNIVERSITAS KHAIRUN</a>
             </li>
         </ul>
     </div>

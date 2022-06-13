@@ -108,7 +108,7 @@ class FileLocator
     }
 
     /**
-     * Examines a file and returns the fully qualified class name.
+     * Examines a file and returns the fully qualified domain name.
      */
     public function getClassname(string $file): string
     {
@@ -186,7 +186,7 @@ class FileLocator
         }
 
         if (! $prioritizeApp && ! empty($appPaths)) {
-            $foundPaths = [...$foundPaths, ...$appPaths];
+            $foundPaths = array_merge($foundPaths, $appPaths);
         }
 
         // Remove any duplicates
@@ -212,7 +212,7 @@ class FileLocator
     /**
      * Return the namespace mappings we know about.
      *
-     * @return array<int, array<string, string>>
+     * @return array|string
      */
     protected function getNamespaces()
     {
@@ -289,8 +289,6 @@ class FileLocator
     /**
      * Scans the defined namespaces, returning a list of all files
      * that are contained within the subpath specified by $path.
-     *
-     * @return string[] List of file paths
      */
     public function listFiles(string $path): array
     {
@@ -309,7 +307,7 @@ class FileLocator
                 continue;
             }
 
-            $tempFiles = get_filenames($fullPath, true, false, false);
+            $tempFiles = get_filenames($fullPath, true);
 
             if (! empty($tempFiles)) {
                 $files = array_merge($files, $tempFiles);
@@ -321,9 +319,7 @@ class FileLocator
 
     /**
      * Scans the provided namespace, returning a list of all files
-     * that are contained within the sub path specified by $path.
-     *
-     * @return string[] List of file paths
+     * that are contained within the subpath specified by $path.
      */
     public function listNamespaceFiles(string $prefix, string $path): array
     {
@@ -343,7 +339,7 @@ class FileLocator
                 continue;
             }
 
-            $tempFiles = get_filenames($fullPath, true, false, false);
+            $tempFiles = get_filenames($fullPath, true);
 
             if (! empty($tempFiles)) {
                 $files = array_merge($files, $tempFiles);

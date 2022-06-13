@@ -111,7 +111,7 @@ class Security extends BaseConfig
      *
      * @var string
      *
-     * @deprecated `Config\Cookie` $samesite property is used.
+     * @deprecated
      */
     public $samesite = 'Lax';
 }

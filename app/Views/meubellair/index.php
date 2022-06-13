@@ -44,7 +44,9 @@
                         <th>Pengguna</th>
                         <th>Unit Pengguna</th>
                         <th>Jenis Kepemilian</th>
-                        <th>Aksi</th>
+                        <?php if (in_groups(['admin-master', 'admin-bmn-unkhair', 'admin-bmn-fakultas'])) : ?>
+                            <th>Aksi</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,23 +67,24 @@
                             <td><?= $data['pengguna'] ?></td>
                             <td><?= $data['unit_pengguna'] ?></td>
                             <td><?= $data['jenis_kepemilikan'] ?></td>
-                            <td>
-                                <a class="btn btn-success btn-sm" href="/meubellair/edit/<?= $data['id'] ?>">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </a>
-                                <!-- <a class="btn btn-danger btn-sm" href="/meubellair/delete">
+                            <?php if (in_groups(['admin-master', 'admin-bmn-unkhair', 'admin-bmn-fakultas'])) : ?>
+                                <td>
+                                    <a class="btn btn-success btn-sm" href="/meubellair/edit/<?= $data['id'] ?>">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
+                                    <!-- <a class="btn btn-danger btn-sm" href="/meubellair/delete">
                                     <i class="bi bi-trash-fill"></i>
                                 </a> -->
 
-                                <form action="/meubellair/<?= $data['id'] ?>" method="post" class="d-inline">
-                                    <?= csrf_field() ?>
-                                    <input type="hidden" value="DELETE" name="_method">
-                                    <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </button>
-                                </form>
-
-                            </td>
+                                    <form action="/meubellair/<?= $data['id'] ?>" method="post" class="d-inline">
+                                        <?= csrf_field() ?>
+                                        <input type="hidden" value="DELETE" name="_method">
+                                        <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

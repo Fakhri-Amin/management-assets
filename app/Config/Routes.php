@@ -56,11 +56,6 @@ $routes->get('/persediaan', 'Persediaan::index');
 $routes->get('/persediaan/edit/(:num)', 'Persediaan::edit/$1');
 $routes->delete('/persediaan/(:num)', 'Persediaan::delete/$1');
 
-// Admin BMN
-$routes->get('/admin_bmn', 'Admin_bmn::index');
-$routes->get('/admin_bmn/edit/(:num)', 'Admin_bmn::edit/$1');
-$routes->delete('/admin_bmn/(:num)', 'Admin_bmn::delete/$1');
-
 // Laboratorium
 $routes->get('/laboratorium', 'Laboratorium::index');
 $routes->get('/laboratorium/edit/(:num)', 'Laboratorium::edit/$1');
@@ -77,10 +72,34 @@ $routes->get('/aset_lainnya', 'Aset_lainnya::index');
 $routes->get('/aset_lainnya/edit/(:num)', 'Aset_lainnya::edit/$1');
 $routes->delete('/aset_lainnya/(:num)', 'Aset_lainnya::delete/$1');
 
+// Admin BMN
+$routes->get('/admin_bmn', 'Admin_bmn::index', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
+$routes->get('/admin_bmn/edit/(:num)', 'Admin_bmn::edit/$1', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
+$routes->delete('/admin_bmn/(:num)', 'Admin_bmn::delete/$1', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
+
 // Laporan Yang Dibutuhkan
-$routes->get('/laporan_yang_dibutuhkan', 'Laporan_yang_dibutuhkan::index');
-$routes->get('/laporan_yang_dibutuhkan/edit/(:num)', 'Laporan_yang_dibutuhkan::edit/$1');
-$routes->delete('/laporan_yang_dibutuhkan/(:num)', 'Laporan_yang_dibutuhkan::delete/$1');
+$routes->get('/laporan_yang_dibutuhkan', 'Laporan_yang_dibutuhkan::index', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
+$routes->get('/laporan_yang_dibutuhkan/edit/(:num)', 'Laporan_yang_dibutuhkan::edit/$1', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
+$routes->delete('/laporan_yang_dibutuhkan/(:num)', 'Laporan_yang_dibutuhkan::delete/$1', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
+
+// User Type
+$routes->get('/user_type', 'User_type::index', ['filter' => 'role:admin-master, admin-bmn-unkhair']);
+$routes->get('/user_type/edit/(:num)', 'User_type::edit/$1', ['filter' => 'role:admin-master, admin-bmn-unkhair']);
+$routes->delete('/user_type/(:num)', 'User_type::delete/$1', ['filter' => 'role:admin-master, admin-bmn-unkhair']);
+
+// User List
+$routes->get('/user_list', 'User_list::index', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
+$routes->get('/user_list/edit/(:num)', 'User_list::edit/$1', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
+$routes->delete('/user_list/(:num)', 'User_list::delete/$1', ['filter' => 'role:admin-master, admin-bmn-unkhair
+']);
 
 
 

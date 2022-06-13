@@ -77,7 +77,7 @@ class Time extends DateTime
     {
         $this->locale = $locale ?: Locale::getDefault();
 
-        $time ??= '';
+        $time = $time ?? '';
 
         // If a test instance has been provided, use it instead.
         if ($time === '' && static::$testNow instanceof self) {
@@ -213,9 +213,9 @@ class Time extends DateTime
      */
     public static function create(?int $year = null, ?int $month = null, ?int $day = null, ?int $hour = null, ?int $minutes = null, ?int $seconds = null, $timezone = null, ?string $locale = null)
     {
-        $year ??= date('Y');
-        $month ??= date('m');
-        $day ??= date('d');
+        $year    = $year ?? date('Y');
+        $month   = $month ?? date('m');
+        $day     = $day ?? date('d');
         $hour    = empty($hour) ? 0 : $hour;
         $minutes = empty($minutes) ? 0 : $minutes;
         $seconds = empty($seconds) ? 0 : $seconds;
@@ -256,10 +256,7 @@ class Time extends DateTime
      */
     public static function createFromTimestamp(int $timestamp, $timezone = null, ?string $locale = null)
     {
-        $time = new self(gmdate('Y-m-d H:i:s', $timestamp), 'UTC', $locale);
-        $timezone ??= 'UTC';
-
-        return $time->setTimezone($timezone);
+        return new self(gmdate('Y-m-d H:i:s', $timestamp), $timezone ?? 'UTC', $locale);
     }
 
     /**
@@ -902,7 +899,7 @@ class Time extends DateTime
      */
     public function toLocalizedString(?string $format = null)
     {
-        $format ??= $this->toStringFormat;
+        $format = $format ?? $this->toStringFormat;
 
         return IntlDateFormatter::formatObject($this->toDateTime(), $format, $this->locale);
     }

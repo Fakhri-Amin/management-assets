@@ -28,7 +28,6 @@ use CodeIgniter\Filters\Filters;
 use CodeIgniter\Format\Format;
 use CodeIgniter\Honeypot\Honeypot;
 use CodeIgniter\HTTP\CLIRequest;
-use CodeIgniter\HTTP\ContentSecurityPolicy;
 use CodeIgniter\HTTP\CURLRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\Negotiate;
@@ -57,7 +56,6 @@ use CodeIgniter\View\View;
 use Config\App;
 use Config\Autoload;
 use Config\Cache;
-use Config\ContentSecurityPolicy as CSPConfig;
 use Config\Encryption;
 use Config\Exceptions as ConfigExceptions;
 use Config\Filters as ConfigFilters;
@@ -96,7 +94,6 @@ use Config\View as ConfigView;
  * @method static CLIRequest clirequest(App $config = null, $getShared = true)
  * @method static CodeIgniter codeigniter(App $config = null, $getShared = true)
  * @method static Commands commands($getShared = true)
- * @method static ContentSecurityPolicy csp(CSPConfig $config = null, $getShared = true)
  * @method static CURLRequest curlrequest($options = [], ResponseInterface $response = null, App $config = null, $getShared = true)
  * @method static Email email($config = null, $getShared = true)
  * @method static EncrypterInterface encrypter(Encryption $config = null, $getShared = false)
@@ -165,7 +162,7 @@ class BaseService
      *
      * @var array<string>
      */
-    private static array $serviceNames = [];
+    private static $serviceNames = [];
 
     /**
      * Returns a shared instance of any of the class' services.
@@ -273,7 +270,7 @@ class BaseService
     /**
      * Reset shared instances and mocks for testing.
      */
-    public static function reset(bool $initAutoloader = true)
+    public static function reset(bool $initAutoloader = false)
     {
         static::$mocks     = [];
         static::$instances = [];
@@ -288,7 +285,6 @@ class BaseService
      */
     public static function resetSingle(string $name)
     {
-        $name = strtolower($name);
         unset(static::$mocks[$name], static::$instances[$name]);
     }
 
@@ -332,7 +328,7 @@ class BaseService
                 foreach ($files as $file) {
                     $classname = $locator->getClassname($file);
 
-                    if (! in_array($classname, [Services::class], true)) {
+                    if (! in_array($classname, ['CodeIgniter\\Config\\Services'], true)) {
                         static::$services[] = new $classname();
                     }
                 }
@@ -369,7 +365,7 @@ class BaseService
                 foreach ($files as $file) {
                     $classname = $locator->getClassname($file);
 
-                    if ($classname !== Services::class) {
+                    if ($classname !== 'CodeIgniter\\Config\\Services') {
                         self::$serviceNames[] = $classname;
                         static::$services[]   = new $classname();
                     }

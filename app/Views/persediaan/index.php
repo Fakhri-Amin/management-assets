@@ -41,7 +41,9 @@
                         <th>Jumlah Barang Keluar</th>
                         <th>Sisa Barang</th>
                         <th>Unit Pengguna Barang</th>
-                        <th>Aksi</th>
+                        <?php if (in_groups(['admin-master', 'admin-bmn-unkhair', 'admin-bmn-fakultas'])) : ?>
+                            <th>Aksi</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,18 +63,20 @@
                             <td><?= $data['jumlah_barang_keluar']; ?></td>
                             <td><?= $data['sisa_barang']; ?></td>
                             <td><?= $data['unit_pengguna_barang']; ?></td>
-                            <td>
-                                <a class="btn btn-success btn-sm" href="/persediaan/edit/<?= $data['id']; ?>">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </a>
-                                <form action="/persediaan/<?= $data['id']; ?>" method="POST" class="d-inline">
-                                    <?= csrf_field(); ?>
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </button>
-                                </form>
-                            </td>
+                            <?php if (in_groups(['admin-master', 'admin-bmn-unkhair', 'admin-bmn-fakultas'])) : ?>
+                                <td>
+                                    <a class="btn btn-success btn-sm" href="/persediaan/edit/<?= $data['id']; ?>">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
+                                    <form action="/persediaan/<?= $data['id']; ?>" method="POST" class="d-inline">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger mt-1" onclick="return confirm('apakah anda yakin ingin dihapus?')">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

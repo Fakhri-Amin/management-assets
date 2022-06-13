@@ -59,12 +59,11 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="kondisi_bangunan" class="form-label">Kondisi Bangunan</label>
-                            <select class="form-select" aria-label="Default select example" name="kondisi_bangunan" id="kondisi_bangunan">
-                                <option selected>-- Jenis Kerusakan --</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Baik'; ?>" <?php if ($data['kondisi_bangunan'] == 'Baik') echo "selected" ?>>Baik</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Ringan'; ?>" <?php if ($data['kondisi_bangunan'] == 'Rusak Ringan') echo "selected" ?>>Rusak Ringan</option>
-                                <option value="<?= (old('kondisi_bangunan')) ? old('kondisi_bangunan') : 'Rusak Berat'; ?>" <?php if ($data['kondisi_bangunan'] == 'Rusak Berat') echo "selected" ?>>Rusak Berat</option>
+                            <label for="kondisi" class="form-label">Kondisi</label>
+                            <select class="form-select" aria-label="Default select example" name="kondisi" id="kondisi" required>
+                                <option <?= ($data['kondisi'] == 'Baik') ? 'selected' : ''; ?> value="Baik">Baik</option>
+                                <option <?= ($data['kondisi'] == 'Rusak Ringan') ? 'selected' : ''; ?> value="Rusak Ringan">Rusak Ringan</option>
+                                <option <?= ($data['kondisi'] == 'Rusak Berat') ? 'selected' : ''; ?> value="Rusak Berat">Rusak Berat</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -121,10 +120,10 @@
                             <!-- <input type="text" class="form-control" id="batas_lahan" name="batas_lahan" value="<?= (old('batas_lahan')) ? old('batas_lahan') : ''; ?>"> -->
                             <select class="form-select" aria-label="Default select example" name="batas_lahan" id="batas_lahan">
                                 <option selected>-- Batas Lahan --</option>
-                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Utara'; ?>" <?php if ($data['batas_lahan'] == 'Utara') echo "selected" ?>>Utara</option>
-                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Selatan'; ?>" <?php if ($data['batas_lahan'] == 'Selatan') echo "selected" ?>>Selatan</option>
-                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Barat'; ?>" <?php if ($data['batas_lahan'] == 'Barat') echo "selected" ?>>Barat</option>
-                                <option value="<?= (old('batas_lahan')) ? old('batas_lahan') : 'Timur'; ?>" <?php if ($data['batas_lahan'] == 'Timur') echo "selected" ?>>Timur</option>
+                                <option <?= ($data['batas_lahan'] == 'Utara') ? 'selected' : ''; ?> value="Utara">Utara</option>
+                                <option <?= ($data['batas_lahan'] == 'Barat') ? 'selected' : ''; ?> value="Barat">Barat</option>
+                                <option <?= ($data['batas_lahan'] == 'Timur') ? 'selected' : ''; ?> value="Timur">Timur</option>
+                                <option <?= ($data['batas_lahan'] == 'Selatan') ? 'selected' : ''; ?> value="Selatan">Selatan</option>
                             </select>
                         </div>
                         <div class="mb-3">

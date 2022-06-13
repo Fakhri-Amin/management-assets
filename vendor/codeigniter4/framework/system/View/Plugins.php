@@ -103,20 +103,4 @@ class Plugins
     {
         return site_url(...$params);
     }
-
-    /**
-     * Wrap csp_script_nonce() function to use as view plugin.
-     */
-    public static function cspScriptNonce(): string
-    {
-        return csp_script_nonce();
-    }
-
-    /**
-     * Wrap csp_style_nonce() function to use as view plugin.
-     */
-    public static function cspStyleNonce(): string
-    {
-        return csp_style_nonce();
-    }
 }

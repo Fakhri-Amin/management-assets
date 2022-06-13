@@ -88,7 +88,7 @@ class BaseConfig
      *
      * @param mixed $property
      *
-     * @return void
+     * @return mixed
      */
     protected function initEnvValue(&$property, string $name, string $prefix, string $shortPrefix)
     {
@@ -102,28 +102,16 @@ class BaseConfig
             } elseif ($value === 'true') {
                 $value = true;
             }
-            if (is_bool($value)) {
-                $property = $value;
-
-                return;
-            }
-
-            $value = trim($value, '\'"');
-
-            if (is_int($property)) {
-                $value = (int) $value;
-            } elseif (is_float($property)) {
-                $value = (float) $value;
-            }
-
-            $property = $value;
+            $property = is_bool($value) ? $value : trim($value, '\'"');
         }
+
+        return $property;
     }
 
     /**
      * Retrieve an environment-specific configuration setting
      *
-     * @return string|null
+     * @return mixed
      */
     protected function getEnvValue(string $property, string $prefix, string $shortPrefix)
     {

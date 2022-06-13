@@ -78,13 +78,9 @@ class Routes extends BaseCollector
 
         foreach ($rawParams as $key => $param) {
             $params[] = [
-                'name'  => '$' . $param->getName() . ' = ',
+                'name'  => $param->getName(),
                 'value' => $router->params()[$key] ??
-                    ' <empty> | default: '
-                    . var_export(
-                        $param->isDefaultValueAvailable() ? $param->getDefaultValue() : null,
-                        true
-                    ),
+                    ('&lt;empty&gt;&nbsp| default: ' . var_export($param->isDefaultValueAvailable() ? $param->getDefaultValue() : null, true)),
             ];
         }
 

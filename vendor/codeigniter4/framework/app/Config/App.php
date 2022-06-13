@@ -3,7 +3,6 @@
 namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
-use CodeIgniter\Session\Handlers\FileHandler;
 
 class App extends BaseConfig
 {
@@ -152,7 +151,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $sessionDriver = FileHandler::class;
+    public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
 
     /**
      * --------------------------------------------------------------------------
@@ -319,7 +318,7 @@ class App extends BaseConfig
      * (empty string) means default SameSite attribute set by browsers (`Lax`)
      * will be set on cookies. If set to `None`, `$cookieSecure` must also be set.
      *
-     * @var string|null
+     * @var string
      *
      * @deprecated use Config\Cookie::$samesite property instead.
      */
@@ -437,7 +436,7 @@ class App extends BaseConfig
      * Defaults to `Lax` as recommended in this link:
      *
      * @see https://portswigger.net/web-security/csrf/samesite-cookies
-     * @deprecated `Config\Cookie` $samesite property is used.
+     * @deprecated Use `Config\Security` $samesite property instead of using this property.
      *
      * @var string
      */

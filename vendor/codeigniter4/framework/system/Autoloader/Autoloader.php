@@ -82,10 +82,6 @@ class Autoloader
      */
     public function initialize(Autoload $config, Modules $modules)
     {
-        $this->prefixes = [];
-        $this->classmap = [];
-        $this->files    = [];
-
         // We have to have one or the other, though we don't enforce the need
         // to have both present in order to work.
         if (empty($config->psr4) && empty($config->classmap)) {
@@ -104,28 +100,12 @@ class Autoloader
             $this->files = $config->files;
         }
 
-        if (is_file(COMPOSER_PATH)) {
-            $this->loadComposerInfo($modules);
+        // Should we load through Composer's namespaces, also?
+        if ($modules->discoverInComposer) {
+            $this->discoverComposerNamespaces();
         }
 
         return $this;
-    }
-
-    private function loadComposerInfo(Modules $modules): void
-    {
-        /**
-         * @var ClassLoader $composer
-         */
-        $composer = include COMPOSER_PATH;
-
-        $this->loadComposerClassmap($composer);
-
-        // Should we load through Composer's namespaces, also?
-        if ($modules->discoverInComposer) {
-            $this->loadComposerNamespaces($composer);
-        }
-
-        unset($composer);
     }
 
     /**
@@ -312,36 +292,8 @@ class Autoloader
         return trim($filename, '.-_');
     }
 
-    private function loadComposerNamespaces(ClassLoader $composer): void
-    {
-        $paths = $composer->getPrefixesPsr4();
-
-        // Get rid of CodeIgniter so we don't have duplicates
-        if (isset($paths['CodeIgniter\\'])) {
-            unset($paths['CodeIgniter\\']);
-        }
-
-        $newPaths = [];
-
-        foreach ($paths as $key => $value) {
-            // Composer stores namespaces with trailing slash. We don't.
-            $newPaths[rtrim($key, '\\ ')] = $value;
-        }
-
-        $this->addNamespace($newPaths);
-    }
-
-    private function loadComposerClassmap(ClassLoader $composer): void
-    {
-        $classes = $composer->getClassMap();
-
-        $this->classmap = array_merge($this->classmap, $classes);
-    }
-
     /**
      * Locates autoload information from Composer, if available.
-     *
-     * @deprecated No longer used.
      */
     protected function discoverComposerNamespaces()
     {

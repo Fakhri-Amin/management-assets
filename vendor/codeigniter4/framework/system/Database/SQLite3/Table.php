@@ -28,7 +28,6 @@ class Table
      * All of the fields this table represents.
      *
      * @var array
-     * @phpstan-var array<string, array<string, bool|int|string|null>>
      */
     protected $fields = [];
 
@@ -277,18 +276,10 @@ class Table
             $exFields[]  = $name;
         }
 
-        $exFields = implode(
-            ', ',
-            array_map(fn ($item) => $this->db->protectIdentifiers($item), $exFields)
-        );
-        $newFields = implode(
-            ', ',
-            array_map(fn ($item) => $this->db->protectIdentifiers($item), $newFields)
-        );
+        $exFields  = implode(', ', $exFields);
+        $newFields = implode(', ', $newFields);
 
-        $this->db->query(
-            "INSERT INTO {$this->prefixedTableName}({$newFields}) SELECT {$exFields} FROM {$this->db->DBPrefix}temp_{$this->tableName}"
-        );
+        $this->db->query("INSERT INTO {$this->prefixedTableName}({$newFields}) SELECT {$exFields} FROM {$this->db->DBPrefix}temp_{$this->tableName}");
     }
 
     /**
@@ -298,7 +289,6 @@ class Table
      * @param array|bool $fields
      *
      * @return mixed
-     * @phpstan-return ($fields is array ? array : mixed)
      */
     protected function formatFields($fields)
     {

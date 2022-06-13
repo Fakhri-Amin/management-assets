@@ -1,4 +1,6 @@
-<?php namespace Myth\Auth\Authorization;
+<?php
+
+namespace Myth\Auth\Authorization;
 
 use CodeIgniter\Model;
 
@@ -25,6 +27,11 @@ class GroupModel extends Model
     // Users
     //--------------------------------------------------------------------
 
+    public function getAllGroupId()
+    {
+        return $this->get()->getResultArray();
+    }
+
     /**
      * Adds a single user to a single group.
      *
@@ -34,7 +41,7 @@ class GroupModel extends Model
      * @return bool
      */
     public function addUserToGroup(int $userId, int $groupId)
-    {    
+    {
         cache()->delete("{$groupId}_users");
         cache()->delete("{$userId}_groups");
         cache()->delete("{$userId}_permissions");
@@ -94,8 +101,7 @@ class GroupModel extends Model
      */
     public function getGroupsForUser(int $userId)
     {
-        if (null === $found = cache("{$userId}_groups"))
-        {
+        if (null === $found = cache("{$userId}_groups")) {
             $found = $this->builder()
                 ->select('auth_groups_users.*, auth_groups.name, auth_groups.description')
                 ->join('auth_groups_users', 'auth_groups_users.group_id = auth_groups.id', 'left')
@@ -117,8 +123,7 @@ class GroupModel extends Model
      */
     public function getUsersForGroup(int $groupId)
     {
-        if (null === $found = cache("{$groupId}_users"))
-        {
+        if (null === $found = cache("{$groupId}_users")) {
             $found = $this->builder()
                 ->select('auth_groups_users.*, users.*')
                 ->join('auth_groups_users', 'auth_groups_users.group_id = auth_groups.id', 'left')
@@ -159,8 +164,7 @@ class GroupModel extends Model
             ->findAll();
 
         $found = [];
-        foreach ($fromGroup as $permission)
-        {
+        foreach ($fromGroup as $permission) {
             $found[$permission['id']] = $permission;
         }
 

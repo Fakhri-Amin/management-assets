@@ -184,7 +184,6 @@ trait FeatureTestTrait
         Services::injectMock('filters', Services::filters(null, false));
 
         $response = $this->app
-            ->setContext('web')
             ->setRequest($request)
             ->run($routes, true);
 
@@ -345,7 +344,7 @@ trait FeatureTestTrait
         // otherwise set it from the URL.
         $get = ! empty($params) && $method === 'get'
             ? $params
-            : $this->getPrivateProperty($request->getUri(), 'query');
+            : $this->getPrivateProperty($request->uri, 'query');
 
         $request->setGlobal('get', $get);
         if ($method !== 'get') {
