@@ -28,7 +28,7 @@
                         <th>No</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Role</th>
+                        <th>Jenis User</th>
                         <?php if (in_groups(['admin-master', 'admin-bmn-unkhair', 'admin-bmn-fakultas'])) : ?>
                             <th>Aksi</th>
                         <?php endif; ?>

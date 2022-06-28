@@ -56,7 +56,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Login sebagai :</div>
-            <?= User()->username; ?>
+            <?= User()->email ?>
         </div>
     </nav>
 </div>
